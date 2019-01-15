@@ -8,8 +8,9 @@ using Object = UnityEngine.Object;
 [Serializable]
 public class Noise
 {
-    public enum NoiseType { Perlin, Simplex }
-    public enum NoiseValueType { Int, Float, String }
+    public enum NoiseType { Perlin, Simplex, Circle, Box }
+    public enum NoiseValueType { Int, Float, String, Mode}
+    public enum NoiseModeType { Sub, Add }
 
     public Shader Shader { get; private set; }
     public float Threshold => threshold;
@@ -17,7 +18,7 @@ public class Noise
 
     public StringNoiseValueTypeDictionary Properties => properties;
     public StringStringDictionary Values => values;
-    public Texture2D Texture => texture;
+    public Texture2D Texture => texture == null ? Texture2D.blackTexture : texture;
     public bool TextureDirty { get; private set; } = false;
 
     [SerializeField] NoiseType type;
@@ -43,17 +44,36 @@ public class Noise
         {
             case NoiseType.Perlin:
                 Shader = Shader.Find("Noise/Perlin");
-                Properties.Add("X Seed", NoiseValueType.Float);
-                Properties.Add("Y Seed", NoiseValueType.Float);
+                Properties.Add("X", NoiseValueType.Float);
+                Properties.Add("Y", NoiseValueType.Float);
                 Properties.Add("Scale", NoiseValueType.Float);
                 Properties.Add("Fractal", NoiseValueType.Int);
+                Properties.Add("Mode", NoiseValueType.Mode);
                 break;
             case NoiseType.Simplex:
                 Shader = Shader.Find("Noise/Simplex");
-                Properties.Add("X Seed", NoiseValueType.Float);
-                Properties.Add("Y Seed", NoiseValueType.Float);
+                Properties.Add("X", NoiseValueType.Float);
+                Properties.Add("Y", NoiseValueType.Float);
                 Properties.Add("Scale", NoiseValueType.Float);
                 Properties.Add("Fractal", NoiseValueType.Int);
+                Properties.Add("Mode", NoiseValueType.Mode);
+                break;
+            case NoiseType.Circle:
+                Shader = Shader.Find("Noise/Circle");
+                Properties.Add("X", NoiseValueType.Float);
+                Properties.Add("Y", NoiseValueType.Float);
+                Properties.Add("Scale", NoiseValueType.Float);
+                Properties.Add("Mode", NoiseValueType.Mode);
+                break;
+            case NoiseType.Box:
+                Shader = Shader.Find("Noise/Box");
+                Properties.Add("X", NoiseValueType.Float);
+                Properties.Add("Y", NoiseValueType.Float);
+                Properties.Add("BLX", NoiseValueType.Float);
+                Properties.Add("BLY", NoiseValueType.Float);
+                Properties.Add("TRX", NoiseValueType.Float);
+                Properties.Add("TRY", NoiseValueType.Float);
+                Properties.Add("Mode", NoiseValueType.Mode);
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
@@ -75,6 +95,9 @@ public class Noise
                 case NoiseValueType.String:
                     values.Add(pair.Key, "");
                     break;
+                case NoiseValueType.Mode:
+                    values.Add(pair.Key, "0");
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -88,7 +111,6 @@ public class Noise
         
         texture = new Texture2D(mapsize.x, mapsize.y, TextureFormat.RGBA32, false);
         
-        //CommandBuffer buffer = new CommandBuffer();
         Material noiseMaterial = new Material(Shader);
         noiseMaterial.SetTexture("_Texture", beforeTexture);
         noiseMaterial.SetFloat("_Threshold", threshold);
@@ -96,6 +118,7 @@ public class Noise
         {
             switch (pair.Value)
             {
+                case NoiseValueType.Mode:
                 case NoiseValueType.Int:
                     noiseMaterial.SetInt("_"+pair.Key, int.Parse(values[pair.Key]));
                     break;
@@ -112,12 +135,9 @@ public class Noise
         RenderTexture sampleTexture = RenderTexture.GetTemporary(mapsize.x, mapsize.y, 0, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Linear);   
 
         Graphics.Blit(Texture2D.whiteTexture, sampleTexture, noiseMaterial);
-//        RenderTexture previousRenderTexture = RenderTexture.active;
         RenderTexture.active = sampleTexture;
         texture.ReadPixels(new Rect(0, 0, mapsize.x, mapsize.y), 0, 0);
         texture.Apply();
-//        RenderTexture.active = previousRenderTexture;
-        
         RenderTexture.ReleaseTemporary(sampleTexture);
         Object.DestroyImmediate(noiseMaterial);
         TextureDirty = false;

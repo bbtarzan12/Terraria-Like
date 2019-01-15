@@ -43,6 +43,7 @@ public class NoiseEditor : Editor
 
     void DrawElementCallback(Rect rect, int index, bool isactive, bool isfocused)
     {
+        EditorGUI.BeginChangeCheck();
         var noise = generator.Noises[index];
         var noiseProperty = noises.GetArrayElementAtIndex(index);
         var thresholdProperty = noiseProperty.FindPropertyRelative("threshold");
@@ -99,7 +100,10 @@ public class NoiseEditor : Editor
                     noise.Values[pair.Key] = EditorGUI.FloatField(valueRect, pair.Key, float.Parse(noise.Values[pair.Key])).ToString();
                     break;
                 case Noise.NoiseValueType.String:
-                    noise.Values[pair.Key] = EditorGUI.TextField(valueRect, pair.Key, (string) noise.Values[pair.Key]);
+                    noise.Values[pair.Key] = EditorGUI.TextField(valueRect, pair.Key, noise.Values[pair.Key]);
+                    break;
+                case Noise.NoiseValueType.Mode:
+                    noise.Values[pair.Key] = ((int)(Noise.NoiseModeType)EditorGUI.EnumPopup(valueRect, (Noise.NoiseModeType)Enum.Parse(typeof(Noise.NoiseModeType), noise.Values[pair.Key]))).ToString();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -109,6 +113,11 @@ public class NoiseEditor : Editor
                 y = valueRect.y + EditorGUIUtility.singleLineHeight + 2
             
             };
+        }
+
+        if (EditorGUI.EndChangeCheck())
+        {
+            generator.RefreshAfter(index);
         }
     }
 

@@ -12,6 +12,7 @@ public class NoiseGenerator : MonoBehaviour
 
     public List<Noise> Noises => noises;
     public Vector2Int MapSize => mapsize;
+    public Texture2D MapTexture => noises[noises.Count - 1].Texture;
 
     public void InitAllNoises()
     {
@@ -31,6 +32,14 @@ public class NoiseGenerator : MonoBehaviour
         foreach (var noise in noises)
         {
             noise.SetDirty();
+        }
+    }
+
+    public void RefreshAfter(int index)
+    {
+        for (int i = index; i < noises.Count; i++)
+        {
+            noises[i].SetDirty();
         }
     }
 }
