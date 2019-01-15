@@ -132,9 +132,7 @@ public class MapGenerator : MonoBehaviour
         RenderTexture.active = previousRenderTexture;
         
         RenderTexture.ReleaseTemporary(simpleTexture); 
-        Destroy(terrainMaterial);
-        GC.Collect();
-        
+        Destroy(terrainMaterial);       
         Debug.Log($"End {nameof(GenerateMapTexture)} {(Time.time - time):F}");
         return resultTexture;
     }

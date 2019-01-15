@@ -8,11 +8,29 @@ public class NoiseGenerator : MonoBehaviour
     [SerializeField] float threshold;
     [SerializeField] Tile tile;
 
-    [SerializeField] List<INoise> noises;
+    [SerializeField] List<Noise> noises;
 
-    public List<INoise> Noises
+    public List<Noise> Noises => noises;
+    public Vector2Int MapSize => mapsize;
+
+    public void InitAllNoises()
     {
-        get { return noises; }
-        set { noises = value; }
+        if(noises == null)
+            noises = new List<Noise>();
+
+        for (int i = 0; i < noises.Count; i++)
+        {
+            var noise = noises[i];
+            noise.Update(mapsize, i != 0 ? noises[i - 1].Texture : Texture2D.whiteTexture);
+            noise.DrawTexture();
+        }
+    }
+
+    public void RefreshAllTextures()
+    {
+        foreach (var noise in noises)
+        {
+            noise.SetDirty();
+        }
     }
 }

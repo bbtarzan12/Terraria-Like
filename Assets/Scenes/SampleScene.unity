@@ -592,9 +592,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e0fea05f3b04b46abd981dbc010f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapsize: {x: 26, y: 59}
+  mapsize: {x: 150, y: 150}
   threshold: 0
   tile: {fileID: 0}
+  noises: []
 --- !u!1 &1788948896
 GameObject:
   m_ObjectHideFlags: 0

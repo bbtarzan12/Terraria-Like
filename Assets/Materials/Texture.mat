@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Texture
-  m_Shader: {fileID: 4800000, guid: ce16782fcc80413982a109a96334be42, type: 3}
+  m_Shader: {fileID: 4800000, guid: 832714ec741946f1b6446ee24cb6df7c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -55,6 +55,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -69,16 +73,21 @@ Material:
     - _OcclusionStrength: 1
     - _PFractal: 7
     - _PScale: 6
+    - _PX: 1
+    - _PY: 1
     - _Parallax: 0.02
     - _SFractal: 7
     - _SScale: 6.6
-    - _Scale: 11.5
+    - _SX: 1
+    - _SY: 1
+    - _Scale: 13.35
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Threshold: 1.36
     - _UVSec: 0
-    - _X: 2.47
-    - _Y: 41.24
+    - _X: 7.08
+    - _Y: 2.6
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

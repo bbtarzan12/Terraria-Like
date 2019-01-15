@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\bbtar\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\bbtar\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Terraria-Like.-1238038618.00" t="ExcludeRecursive" />
-    <e p="C:\Users\bbtar\Documents\SpaceWar\Terraria-Like" t="IncludeRecursive">
+    <e p="C:\Users\OptIn\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\OptIn\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Terraria-Like.-805493391.00" t="ExcludeRecursive" />
+    <e p="C:\Users\OptIn\Documents\Terraria-Like" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -14,9 +14,8 @@
               <e p="NoiseEditor.cs" t="Include" />
             </e>
             <e p="INoise.cs" t="Include" />
+            <e p="Noise.cs" t="Include" />
             <e p="NoiseGenerator.cs" t="Include" />
-            <e p="PerlinNoise.cs" t="Include" />
-            <e p="SimplexNoise.cs" t="Include" />
           </e>
           <e p="SimplexNoise.cs" t="Include" />
           <e p="Tiles" t="Include">
@@ -42,6 +41,12 @@
           <e p="Terrain.shader" t="Include" />
         </e>
         <e p="Thrids" t="Include">
+          <e p="SerializableDictionary" t="Include">
+            <e p="Editor" t="Include">
+              <e p="SerializableDictionaryPropertyDrawer.cs" t="Include" />
+            </e>
+            <e p="SerializableDictionary.cs" t="Include" />
+          </e>
           <e p="Tayx" t="Include">
             <e p="Graphy - Ultimate Stats Monitor" t="Include">
               <e p="Changelog.txt" t="Include" />
