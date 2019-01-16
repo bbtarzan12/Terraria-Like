@@ -106,7 +106,7 @@ float NoiseSimplex(float2 v)
 	
 	// Add contributions from each corner to get the final noise value.
 	// The result is scaled to return values in the interval [-1,1].
-	return (40.0f * (n0 + n1 + n2)) * 0.5 + 0.5; // TODO: The scale factor is preliminary!
+	return (40.0f * (n0 + n1 + n2)); // TODO: The scale factor is preliminary!
 }
 
 float RidgedMF(float2 v, float ridgeOffset, int octaves, float lacunarity, float gain )

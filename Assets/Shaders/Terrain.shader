@@ -1,12 +1,11 @@
-Shader "Noise/BasicTerrain"
+Shader "Noise/Terrain"
 {
     Properties
     {
+        _X ("X Seed", float) = 1
         _Height ("Height", range(0,1)) = 0.5
         _Scale ("Scale", float) = 1
         _Fractal ("Fractal", int) = 1
-        _Texture ("Before Texture", 2D) = "white" {}
-        [Enum(SUB, 0, ADD, 1)] _Mode ("Mode", int) = 0
     }
     SubShader
     {
@@ -21,12 +20,10 @@ Shader "Noise/BasicTerrain"
             #include "UnityCG.cginc"
             #include "SimplexNoise.hlsl"
             
+            float _X;
             float _Height;
-            int _Mode;
             float _Scale;
-            float _Threshold;
             int _Fractal;
-            sampler2D _Texture;
 
             fixed4 frag (v2f_img i) : SV_Target
             {
@@ -34,7 +31,7 @@ Shader "Noise/BasicTerrain"
                 float o = 0.5;
                 float s = 1;       
                 float w = 0.5;
-                float2 uv = float2((i.uv-0.5) * _Scale);
+                float2 uv = float2(((i.uv-0.5) + float2(_X, 0)) * _Scale);
 
                 for (int i = 0; i < _Fractal; i++)
                 {
@@ -48,15 +45,13 @@ Shader "Noise/BasicTerrain"
                 
                 float t = step(uv.y + o, (_Height-0.5) * _Scale);
                 
-                float4 b = tex2D(_Texture, texUV);
-                
                 if(t > 0)
                 {
-                    return float4(_Mode,_Mode,_Mode,1);
+                    return float4(1,1,1,1);
                 }
                 
                 
-                return 1-b;
+                return float4(0,0,0,1);
             }
         
             ENDCG

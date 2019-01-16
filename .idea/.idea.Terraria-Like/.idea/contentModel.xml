@@ -11,13 +11,16 @@
           <e p="MapGenerator.cs" t="Include" />
           <e p="Node" t="Include">
             <e p="Editor" t="Include">
-              <e p="ColorNodeEditor.cs" t="Include" />
               <e p="NoiseGraphEditor.cs" t="Include" />
               <e p="NoiseNodeEditor.cs" t="Include" />
+              <e p="OutNodeEditor.cs" t="Include" />
               <e p="PreviewNodeEditor.cs" t="Include" />
             </e>
             <e p="Nodes" t="Include">
               <e p="ColorNode.cs" t="Include" />
+              <e p="FlipNode.cs" t="Include" />
+              <e p="GradientNode.cs" t="Include" />
+              <e p="InvertNode.cs" t="Include" />
               <e p="MixNode.cs" t="Include" />
               <e p="NoiseNode.cs" t="Include" />
               <e p="OutNode.cs" t="Include" />
@@ -25,6 +28,7 @@
               <e p="PreviewNode.cs" t="Include" />
               <e p="RidgedMultiNode.cs" t="Include" />
               <e p="SimplexNode.cs" t="Include" />
+              <e p="TerrainNode.cs" t="Include" />
             </e>
             <e p="NoiseGraph.cs" t="Include" />
           </e>
@@ -54,9 +58,11 @@
           </e>
         </e>
         <e p="Shaders" t="Include">
-          <e p="BasicTerrain.shader" t="Include" />
           <e p="Box.shader" t="Include" />
+          <e p="BoxGradient.shader" t="Include" />
           <e p="Circle.shader" t="Include" />
+          <e p="Flip.shader" t="Include" />
+          <e p="Invert.shader" t="Include" />
           <e p="Mix.shader" t="Include" />
           <e p="Perlin.shader" t="Include" />
           <e p="PerlinNoise.hlsl" t="Include" />
@@ -64,6 +70,7 @@
           <e p="RidgedMulti.shader" t="Include" />
           <e p="Simplex.shader" t="Include" />
           <e p="SimplexNoise.hlsl" t="Include" />
+          <e p="Terrain.shader" t="Include" />
         </e>
         <e p="Thrids" t="Include">
           <e p="SerializableDictionary" t="Include">

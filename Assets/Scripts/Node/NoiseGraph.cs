@@ -6,7 +6,7 @@ using XNode.Noise;
 [Serializable, CreateAssetMenu]
 public class NoiseGraph : NodeGraph
 {
-    public Vector2Int mapSize;
+    public Vector2Int mapSize = Vector2Int.one;
 
     public Texture2D GetTexture()
     {

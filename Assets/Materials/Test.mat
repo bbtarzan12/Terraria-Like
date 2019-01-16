@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Texture
-  m_Shader: {fileID: 4800000, guid: 107f04756f1a48eda30a70d6a118cd8a, type: 3}
+  m_Name: Test
+  m_Shader: {fileID: 4800000, guid: 39952d2f53e137849a01a3f0c37f64f8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture1:
@@ -68,21 +68,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _A: 1.02
+    - _B: 0.69
     - _BLX: 0.32
     - _BLY: 0.4
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Fractal: 12.57
-    - _Gain: 0.32
+    - _Fractal: 8.06
+    - _Gain: 1.82
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 0.466
-    - _Lacunarity: 1.66
+    - _Height: 0.563
+    - _Lacunarity: 1
     - _Metallic: 0
-    - _Mode: 3
+    - _Mode: 1
     - _OcclusionStrength: 1
     - _PFractal: 7
     - _PScale: 6
@@ -93,18 +95,19 @@ Material:
     - _SScale: 6.6
     - _SX: 1
     - _SY: 1
-    - _Scale: 32.29
+    - _Scale: 9.49
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TRX: 0.67
     - _TRY: 0.85
-    - _Threshold: 0.1
+    - _Threshold: 0.095
     - _UVSec: 0
-    - _X: 0
-    - _Y: 0
+    - _X: 15
+    - _Y: 5.1
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Pos: {r: 0.8, g: 0.8, b: 0.96, a: 0.99}
     - _Position: {r: 0.2, g: 0.2, b: 0.8, a: 0.8}

@@ -9,14 +9,14 @@ namespace XNode.Noise
 	public class ColorNode : NoiseNode
 	{
 		[Output] public NoiseNode output;
-		public Color fillColor;
+		public Color color;
 
 		public override Texture2D GetTexture()
 		{
 			var texture = new Texture2D(GetGraph.mapSize.x, GetGraph.mapSize.y, TextureFormat.RGBA32, false);
 			var fillColorArray = texture.GetPixels();
 			for (int i = 0; i < fillColorArray.Length; i++)
-				fillColorArray[i] = fillColor;
+				fillColorArray[i] = color;
 			
 			texture.SetPixels(fillColorArray);
 			texture.Apply();
@@ -31,7 +31,7 @@ namespace XNode.Noise
 			Texture = new Texture2D(GetGraph.mapSize.x, GetGraph.mapSize.y, TextureFormat.RGBA32, false);
 			var fillColorArray = Texture.GetPixels();
 			for (int i = 0; i < fillColorArray.Length; i++)
-				fillColorArray[i] = fillColor;
+				fillColorArray[i] = color;
 			
 			Texture.SetPixels(fillColorArray);
 			Texture.Apply();

@@ -11,13 +11,13 @@ namespace XNode.Noise
         [Output] public NoiseNode output;
         public float x;
         public float y;
-        public float scale;
-        public float lacunarity;
-        public float gain;
-        [Range(0, 1)] public float threshold;
-        [Range(0, 10)] public int fractal;
+        public float scale = 10;
+        public float lacunarity = 1;
+        public float gain = 3;
+        [Range(0, 1)] public float threshold = 0.5f;
+        [Range(1, 10)] public int fractal = 3;
         public Color color;
-        public MixType mixType;
+        public MixType mixType = MixType.SUB;
 
         protected override void Init()
         {

@@ -64,7 +64,12 @@
                     }
                 }
                 
-                return b;
+                float maxB = max(b.x,max(b.y,b.z));
+                
+                if(maxB > _Threshold)
+                    return float4(maxB,maxB,maxB,1);
+                    
+                return float4(0,0,0,1);
             }
         
             ENDCG

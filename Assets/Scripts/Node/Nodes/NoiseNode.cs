@@ -23,6 +23,7 @@ namespace XNode.Noise
         public override void OnRemoveConnection(NodePort port)
         {
             base.OnRemoveConnection(port);
+            Texture = null;
             Update();
         }
 

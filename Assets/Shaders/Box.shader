@@ -2,12 +2,9 @@ Shader "Noise/Box"
 {
     Properties
     {
-        _X ("X", float) = 1
-        _Y ("Y", float) = 1
-        _TRX ("Top Right X", float) = 1
-        _TRY ("Top Right Y", float) = 1
-        _BLX ("Bottom Left X", float) = 0
-        _BLY ("Bottom Left Y", float) = 0
+        _X ("Center X", float) = 1
+        _Y ("Center Y", float) = 1
+        
         _Texture ("Before Texture", 2D) = "white" {}
         [Enum(SUB, 0, ADD, 1)] _Mode ("Mode", int) = 0
     }

@@ -23,6 +23,7 @@ Shader "Noise/Mix"
             int _Mode;
             sampler2D _Texture1;
             sampler2D _Texture2;
+            float _Threshold;
             
             fixed4 frag (v2f_img i) : SV_Target
             {

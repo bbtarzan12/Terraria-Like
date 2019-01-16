@@ -5,35 +5,25 @@ namespace XNode.Noise
 {
  
     [Serializable]
-    public class PerlinNode : NoiseNode
+    public class FlipNode : NoiseNode
     {
         [Input(ShowBackingValue.Unconnected, ConnectionType.Override)] public NoiseNode input;
         [Output] public NoiseNode output;
-        public float x;
-        public float y;
-        public float scale = 10;
-        [Range(0, 1)] public float threshold = 0.5f;
-        [Range(1, 10)] public int fractal = 1;
-        public Color color;
-        public MixType mixType = MixType.SUB;
+        public bool FlipX = false;
+        public bool FlipY = false;
 
         protected override void Init()
         {
             base.Init(); 
-            shader = Shader.Find("Noise/Perlin");
+            shader = Shader.Find("Noise/Flip");
         }
 
         public override Texture2D GetTexture()
         {
             Material noiseMaterial = new Material(shader);
             noiseMaterial.SetTexture("_Texture", ((NoiseNode)GetPort(nameof(input)).Connection.node).GetTexture());
-            noiseMaterial.SetFloat("_X", x);
-            noiseMaterial.SetFloat("_Y", y);
-            noiseMaterial.SetFloat("_Scale", scale);
-            noiseMaterial.SetFloat("_Threshold", threshold);
-            noiseMaterial.SetColor("_Color", color);
-            noiseMaterial.SetInt("_Fractal", fractal);
-            noiseMaterial.SetInt("_Mode", (int)mixType);
+            noiseMaterial.SetInt("_X", Convert.ToInt32(FlipX));
+            noiseMaterial.SetInt("_Y", Convert.ToInt32(FlipY));
             return TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);
         }
 
@@ -52,13 +42,8 @@ namespace XNode.Noise
            
             Material noiseMaterial = new Material(shader);
             noiseMaterial.SetTexture("_Texture", inputNoise.Texture);
-            noiseMaterial.SetFloat("_X", x);
-            noiseMaterial.SetFloat("_Y", y);
-            noiseMaterial.SetFloat("_Scale", scale);
-            noiseMaterial.SetFloat("_Threshold", threshold);
-            noiseMaterial.SetColor("_Color", color);
-            noiseMaterial.SetInt("_Fractal", fractal);
-            noiseMaterial.SetInt("_Mode", (int)mixType);
+            noiseMaterial.SetInt("_X", Convert.ToInt32(FlipX));
+            noiseMaterial.SetInt("_Y", Convert.ToInt32(FlipY));
 
             Texture = TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);
             
