@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
+using XNode;
 
 [Serializable]
 public class StringStringDictionary : SerializableDictionary<string, string>{}
+
+[Serializable]
+public class NodePortDictionary : SerializableDictionary<string, NodePort>{}
 
 [Serializable]
 public class StringNoiseValueTypeDictionary : SerializableDictionary<string, Noise.NoiseValueType>{}

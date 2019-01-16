@@ -9,6 +9,25 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="MapGenerator.cs" t="Include" />
+          <e p="Node" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ColorNodeEditor.cs" t="Include" />
+              <e p="NoiseGraphEditor.cs" t="Include" />
+              <e p="NoiseNodeEditor.cs" t="Include" />
+              <e p="PreviewNodeEditor.cs" t="Include" />
+            </e>
+            <e p="Nodes" t="Include">
+              <e p="ColorNode.cs" t="Include" />
+              <e p="MixNode.cs" t="Include" />
+              <e p="NoiseNode.cs" t="Include" />
+              <e p="OutNode.cs" t="Include" />
+              <e p="PerlinNode.cs" t="Include" />
+              <e p="PreviewNode.cs" t="Include" />
+              <e p="RidgedMultiNode.cs" t="Include" />
+              <e p="SimplexNode.cs" t="Include" />
+            </e>
+            <e p="NoiseGraph.cs" t="Include" />
+          </e>
           <e p="Noise" t="Include">
             <e p="Editor" t="Include">
               <e p="NoiseEditor.cs" t="Include" />
@@ -18,6 +37,7 @@
             <e p="NoiseGenerator.cs" t="Include" />
           </e>
           <e p="SimplexNoise.cs" t="Include" />
+          <e p="TextureMaker.cs" t="Include" />
           <e p="Tiles" t="Include">
             <e p="Rule Tile" t="Include">
               <e p="Scripts" t="Include">
@@ -34,13 +54,16 @@
           </e>
         </e>
         <e p="Shaders" t="Include">
+          <e p="BasicTerrain.shader" t="Include" />
           <e p="Box.shader" t="Include" />
           <e p="Circle.shader" t="Include" />
+          <e p="Mix.shader" t="Include" />
           <e p="Perlin.shader" t="Include" />
           <e p="PerlinNoise.hlsl" t="Include" />
+          <e p="RidgedMulti.hlsl" t="Include" />
+          <e p="RidgedMulti.shader" t="Include" />
           <e p="Simplex.shader" t="Include" />
           <e p="SimplexNoise.hlsl" t="Include" />
-          <e p="Terrain.shader" t="Include" />
         </e>
         <e p="Thrids" t="Include">
           <e p="SerializableDictionary" t="Include">
@@ -121,6 +144,40 @@
                 <e p="GraphStandard.shader" t="Include" />
               </e>
             </e>
+          </e>
+        </e>
+        <e p="xNode" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Attributes" t="Include">
+              <e p="NodeEnum.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="Drawers" t="Include">
+                <e p="NodeEnumDrawer.cs" t="Include" />
+              </e>
+              <e p="NodeEditor.cs" t="Include" />
+              <e p="NodeEditorAction.cs" t="Include" />
+              <e p="NodeEditorAssetModProcessor.cs" t="Include" />
+              <e p="NodeEditorBase.cs" t="Include" />
+              <e p="NodeEditorGUI.cs" t="Include" />
+              <e p="NodeEditorGUILayout.cs" t="Include" />
+              <e p="NodeEditorPreferences.cs" t="Include" />
+              <e p="NodeEditorReflection.cs" t="Include" />
+              <e p="NodeEditorResources.cs" t="Include" />
+              <e p="NodeEditorUtilities.cs" t="Include" />
+              <e p="NodeEditorWindow.cs" t="Include" />
+              <e p="NodeGraphEditor.cs" t="Include" />
+              <e p="Resources" t="Include">
+                <e p="ScriptTemplates" t="Include">
+                  <e p="xNode_NodeGraphTemplate.cs.txt" t="Include" />
+                  <e p="xNode_NodeTemplate.cs.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Node.cs" t="Include" />
+            <e p="NodeDataCache.cs" t="Include" />
+            <e p="NodeGraph.cs" t="Include" />
+            <e p="NodePort.cs" t="Include" />
           </e>
         </e>
       </e>

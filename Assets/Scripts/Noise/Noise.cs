@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 [Serializable]
 public class Noise
 {
-    public enum NoiseType { Perlin, Simplex, Circle, Box }
+    public enum NoiseType { Perlin, Simplex, Circle, Box, Ridge, BasicTerrain }
     public enum NoiseValueType { Int, Float, String, Mode}
     public enum NoiseModeType { Sub, Add }
 
@@ -73,6 +73,21 @@ public class Noise
                 Properties.Add("BLY", NoiseValueType.Float);
                 Properties.Add("TRX", NoiseValueType.Float);
                 Properties.Add("TRY", NoiseValueType.Float);
+                Properties.Add("Mode", NoiseValueType.Mode);
+                break;
+            case NoiseType.BasicTerrain:
+                Shader = Shader.Find("Noise/BasicTerrain");
+                Properties.Add("Height", NoiseValueType.Float);
+                Properties.Add("Scale", NoiseValueType.Float);
+                Properties.Add("Fractal", NoiseValueType.Int);
+                Properties.Add("Mode", NoiseValueType.Mode);
+                break;
+            case NoiseType.Ridge:
+                Shader = Shader.Find("Noise/Ridge");
+                Properties.Add("Scale", NoiseValueType.Float);
+                Properties.Add("Grain", NoiseValueType.Float);
+                Properties.Add("Lacunarity", NoiseValueType.Float);
+                Properties.Add("Fractal", NoiseValueType.Int);
                 Properties.Add("Mode", NoiseValueType.Mode);
                 break;
             default:

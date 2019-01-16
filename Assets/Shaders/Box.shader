@@ -24,7 +24,6 @@ Shader "Noise/Box"
             #pragma vertex vert_img
             #pragma fragment frag
             #include "UnityCG.cginc"
-            #include "PerlinNoise.hlsl"
             
             int _Mode;
             float _X;

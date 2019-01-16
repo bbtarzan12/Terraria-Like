@@ -8,8 +8,7 @@ using UnityEngine.Tilemaps;
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField] TileBase tile;
-
-    NoiseGenerator noiseGenerator;
+    [SerializeField] NoiseGraph graph;
     Tilemap tilemap;
 
     public static async void InitMap(Vector2Int mapSize, Texture2D texture, Tilemap tilemap, TileBase tile)
@@ -36,13 +35,12 @@ public class MapGenerator : MonoBehaviour
     void Awake()
     {
         tilemap = GetComponent<Tilemap>();
-        noiseGenerator = GetComponent<NoiseGenerator>();
     }
 
     void Start()
     {
         //int[,] map = GenerateMapArray(mapSize.x, mapSize.y, threshold, scale, seed);
-        InitMap(noiseGenerator.MapSize, noiseGenerator.MapTexture, tilemap, tile);
+        InitMap(graph.mapSize, graph.GetTexture(), tilemap, tile);
     }
 
     void Update()
