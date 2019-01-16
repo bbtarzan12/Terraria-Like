@@ -30,6 +30,7 @@ namespace UnityEngine
             get { return NeighborCount; }
         }
 
+        public Sprite[] m_Sprites;
         public Sprite m_DefaultSprite;
         public GameObject m_DefaultGameObject;
         public Tile.ColliderType m_DefaultColliderType = Tile.ColliderType.Sprite;

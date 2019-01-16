@@ -7,11 +7,15 @@ using UnityEngine.Tilemaps;
 
 public class MapGenerator : MonoBehaviour
 {
-    [SerializeField] TileBase tile;
+    [SerializeField] TileBase redTile;
+    [SerializeField] TileBase greenTile;
+    [SerializeField] TileBase blueTile;
+    [SerializeField] TileBase yellowTile;
+    [SerializeField] TileBase whiteTile;
     [SerializeField] NoiseGraph graph;
     Tilemap tilemap;
 
-    public static async void InitMap(Vector2Int mapSize, Texture2D texture, Tilemap tilemap, TileBase tile)
+    public static async void InitMap(Vector2Int mapSize, Texture2D texture, Tilemap tilemap, TileBase redTile, TileBase greenTile, TileBase blueTile, TileBase yellowTile, TileBase whiteTile)
     {
         float time = Time.time;
         Debug.Log($"Start {nameof(InitMap)}");
@@ -21,8 +25,20 @@ public class MapGenerator : MonoBehaviour
             for (int y = 0; y < mapSize.y; y++)
             {
                 Vector3Int tilePos = new Vector3Int(x, y, 0);
-                if(texture.GetPixel(x, y).r > 0.98f)
-                    tilemap.SetTile(tilePos, tile);
+
+                Color color = texture.GetPixel(x, y);
+                const float threshold = 0.7f;
+                
+                if(color.r > threshold && color.g > threshold && color.b > threshold)
+                    tilemap.SetTile(tilePos, whiteTile);
+                else if(color.r > threshold && color.g > threshold)
+                    tilemap.SetTile(tilePos, yellowTile);
+                else if(color.r > threshold)
+                    tilemap.SetTile(tilePos, redTile);
+                else if(color.g > threshold)
+                    tilemap.SetTile(tilePos, greenTile);
+                else if(color.b > threshold)
+                    tilemap.SetTile(tilePos, blueTile);
                 else
                     tilemap.SetTile(tilePos, null);
             }
@@ -40,7 +56,7 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         //int[,] map = GenerateMapArray(mapSize.x, mapSize.y, threshold, scale, seed);
-        InitMap(graph.mapSize, graph.GetTexture(), tilemap, tile);
+        InitMap(graph.mapSize, graph.GetTexture(), tilemap, redTile, greenTile, blueTile, yellowTile, whiteTile);
     }
 
     void Update()

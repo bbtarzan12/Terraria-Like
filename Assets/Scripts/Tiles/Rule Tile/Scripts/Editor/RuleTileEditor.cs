@@ -163,6 +163,22 @@ namespace UnityEditor
 
             EditorGUILayout.Space();
 
+            if (GUILayout.Button("Generate Tiles"))
+            {
+                tile.m_Sprites = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(tile.m_DefaultSprite)).OfType<Sprite>().ToArray();
+
+                int index = 0;
+                for (int i = 0; i < tile.m_TilingRules.Count; i++)
+                {
+                    var rule = tile.m_TilingRules[i];
+                    for (int j = 0; j < rule.m_Sprites.Length; j++)
+                    {
+                        rule.m_Sprites[j] = tile.m_Sprites[index];
+                        index++;
+                    }
+                }
+            }
+            
             if (m_ReorderableList != null && tile.m_TilingRules != null)
                 m_ReorderableList.DoLayoutList();
         }
