@@ -30,6 +30,7 @@ namespace XNode.Noise
 			noiseMaterial.SetFloat("_Height", height);
 			noiseMaterial.SetFloat("_Scale", scale);
 			noiseMaterial.SetInt("_Fractal", fractal);
+			noiseMaterial.SetFloat("_Ratio", GetGraph.Ratio);
 			return TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);
 		}
 
@@ -47,6 +48,7 @@ namespace XNode.Noise
 			noiseMaterial.SetFloat("_Height", height);
 			noiseMaterial.SetFloat("_Scale", scale);
 			noiseMaterial.SetInt("_Fractal", fractal);
+			noiseMaterial.SetFloat("_Ratio", GetGraph.Ratio);
 
 			Texture = TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);
             

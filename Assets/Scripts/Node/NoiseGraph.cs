@@ -7,6 +7,7 @@ using XNode.Noise;
 public class NoiseGraph : NodeGraph
 {
     public Vector2Int mapSize = Vector2Int.one;
+    public float Ratio => (float)mapSize.x / mapSize.y;
 
     public Texture2D GetTexture()
     {

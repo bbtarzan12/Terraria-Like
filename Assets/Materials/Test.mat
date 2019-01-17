@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Test
-  m_Shader: {fileID: 4800000, guid: 39952d2f53e137849a01a3f0c37f64f8, type: 3}
+  m_Shader: {fileID: 4800000, guid: aa45bfb229e148947818fa131be07511, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -76,12 +76,12 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Fractal: 8.06
+    - _Fractal: 7
     - _Gain: 1.82
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 0.563
+    - _Height: 0.445
     - _Lacunarity: 1
     - _Metallic: 0
     - _Mode: 1
@@ -91,19 +91,20 @@ Material:
     - _PX: 1
     - _PY: 1
     - _Parallax: 0.02
+    - _Ratio: 1
     - _SFractal: 7
     - _SScale: 6.6
     - _SX: 1
     - _SY: 1
-    - _Scale: 9.49
+    - _Scale: 58.9
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TRX: 0.67
     - _TRY: 0.85
-    - _Threshold: 0.095
+    - _Threshold: 0.532
     - _UVSec: 0
-    - _X: 15
+    - _X: 1.31
     - _Y: 5.1
     - _ZWrite: 1
     m_Colors:

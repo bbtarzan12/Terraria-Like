@@ -33,6 +33,7 @@ namespace XNode.Noise
             noiseMaterial.SetFloat("_Threshold", threshold);
             noiseMaterial.SetColor("_Color", color);
             noiseMaterial.SetInt("_Fractal", fractal);
+            noiseMaterial.SetFloat("_Ratio", GetGraph.Ratio);
             noiseMaterial.SetInt("_Mode", (int)mixType);
             return TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);
         }
@@ -58,6 +59,7 @@ namespace XNode.Noise
             noiseMaterial.SetFloat("_Threshold", threshold);
             noiseMaterial.SetColor("_Color", color);
             noiseMaterial.SetInt("_Fractal", fractal);
+            noiseMaterial.SetFloat("_Ratio", GetGraph.Ratio);
             noiseMaterial.SetInt("_Mode", (int)mixType);
 
             Texture = TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);

@@ -9,6 +9,7 @@
         _Threshold ("Threshold", range(0, 1)) = 0
         _Texture ("Before Texture", 2D) = "white" {}
         _Color ("Color", color) = (1,1,1,1)
+        _Ratio ("Ratio", float) = 1
         [Enum(ADD, 0, SUB, 1, MUL, 2, DIV, 3)] _Mode ("Mode", int) = 0
     }
     SubShader
@@ -29,6 +30,7 @@
             float _Y;
             float _Scale;
             float _Threshold;
+            float _Ratio;
             float4 _Color;
             int _Fractal;
             sampler2D _Texture;
@@ -42,9 +44,9 @@
         
                 for (int i = 0; i < _Fractal; i++)
                 {
-                    float2 coord = (uv - 0.5) * s + float2(_X, _Y);
+                    float2 coord = ((uv - 0.5) + float2(_X, _Y)) * s;
         
-                    o += snoise(coord) * w;
+                    o += snoise(float2(coord.x * _Ratio, coord.y)) * w;
         
                     s *= 2.0;
                     w *= 0.5;
