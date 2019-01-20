@@ -50,8 +50,19 @@ public class NoiseGraphEditor : NodeGraphEditor
         
         if (GUILayout.Button("Apply MapSize"))
         {
-            ((NoiseGraph)target).GenerateTexture();
+            ((NoiseGraph)target).ApplyMapSize();
         }
+        
+        if (GUILayout.Button("Expand All Nodes"))
+        {
+            ((NoiseGraph)target).ExpandAllNodes();
+        }
+        
+        if (GUILayout.Button("Collapse All Nodes"))
+        {
+            ((NoiseGraph)target).CollapseAllNodes();
+        }
+        
                 
         GUILayout.EndArea();
         

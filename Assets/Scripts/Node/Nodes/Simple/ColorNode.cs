@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XNode;
@@ -23,10 +24,10 @@ namespace XNode.Noise.Simple
 			return texture;
 		}
 
-		public override void GenerateTexture()
-		{            
+		public override Texture2D GenerateTexture()
+		{
 			if (!Dirty)
-				return;
+				return HasTexture ? Texture : GenerateTexture();
 			
 			Texture = new Texture2D(GetGraph.mapSize.x, GetGraph.mapSize.y, TextureFormat.RGBA32, false);
 			var fillColorArray = Texture.GetPixels();
@@ -37,6 +38,8 @@ namespace XNode.Noise.Simple
 			Texture.Apply();
 			GetPort(nameof(output))?.GetConnections()?.ForEach(f => ((NoiseNode)f.node)?.SetTextureDirty());
 			Dirty = false;
+			
+			return Texture;
 		}
 	}
 }

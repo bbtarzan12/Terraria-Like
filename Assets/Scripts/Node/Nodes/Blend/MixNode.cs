@@ -31,34 +31,38 @@ namespace XNode.Noise.Blend
             return TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);  
         }
 
-        public override void GenerateTexture()
+        public override Texture2D GenerateTexture()
         {
             if (!IsShaderInit)
-                return;
+                return Texture2D.whiteTexture;
 
             if (!Dirty)
-                return;
+                return HasTexture ? Texture : GenerateTexture();
 
             NoiseNode input1Noise = GetInputValue<NoiseNode>("input1");
             NoiseNode input2Noise = GetInputValue<NoiseNode>("input2");
-            Vector2Int mapsize = GetGraph.mapSize;
             
-            if (input1Noise == null || input1Noise.Texture == null)
-                return;
-
-            if (input2Noise == null || input2Noise.Texture == null)
-                return;
+            if (input1Noise == null)
+                return Texture2D.whiteTexture;
+            
+            if (input2Noise == null)
+                return Texture2D.whiteTexture;
+            
+            Texture2D input1Texture = input1Noise.Texture == null ? input1Noise.GenerateTexture() : input1Noise.Texture;
+            Texture2D input2Texture = input2Noise.Texture == null ? input2Noise.GenerateTexture() : input2Noise.Texture;
             
             Texture = new Texture2D(GetGraph.mapSize.x, GetGraph.mapSize.y, TextureFormat.RGBA32, false);
             
             Material noiseMaterial = new Material(shader);
-            noiseMaterial.SetTexture("_Texture1", input1Noise.Texture);
-            noiseMaterial.SetTexture("_Texture2", input2Noise.Texture);
+            noiseMaterial.SetTexture("_Texture1", input1Texture);
+            noiseMaterial.SetTexture("_Texture2", input2Texture);
             noiseMaterial.SetInt("_Mode", (int)mixType);
             
             Texture = TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);  
             GetPort(nameof(output))?.GetConnections()?.ForEach(f => ((NoiseNode)f.node)?.SetTextureDirty());
             Dirty = false;
+
+            return Texture;
         }
 
         public override void Update() => Dirty = true;

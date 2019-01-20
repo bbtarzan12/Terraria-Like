@@ -23,17 +23,54 @@ public class NoiseGraph : NodeGraph
         return outNode.GetTexture();
     }
 
-    public void GenerateTexture()
+    public void ApplyMapSize()
+    {
+        OutNode outNode = nodes.Find(n => n is OutNode) as OutNode;
+
+        if (outNode == null)
+        {
+            Debug.Log($"{nameof(outNode)} is null");
+            return;
+        }
+
+        foreach (var node in nodes)
+        {
+            var noiseNode = node as NoiseNode;
+
+            if (noiseNode != null)
+            {
+                noiseNode.RefreshTexture();
+                noiseNode.SetTextureDirty();
+            }
+        }
+
+        outNode.GenerateTexture();
+    }
+
+    public void ExpandAllNodes()
     {
         foreach (var node in nodes)
         {
             var noiseNode = node as NoiseNode;
-                
+
             if (noiseNode != null)
             {
-                noiseNode.SetTextureDirty();
+                noiseNode.ShowTextureInEditor = true;
             }
         }
     }
-   
+
+    public void CollapseAllNodes()
+    {
+        foreach (var node in nodes)
+        {
+            var noiseNode = node as NoiseNode;
+
+            if (noiseNode != null)
+            {
+                noiseNode.ShowTextureInEditor = false;
+            }
+        }
+    }
+
 }

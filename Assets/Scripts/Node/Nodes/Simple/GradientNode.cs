@@ -31,14 +31,13 @@ namespace XNode.Noise.Simple
 			return TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);
 		}
 
-		public override void GenerateTexture()
-		{            
-			
+		public override Texture2D GenerateTexture()
+		{
 			if (!IsShaderInit)
-				return;
+				return Texture2D.whiteTexture;
 
 			if (!Dirty)
-				return;
+				return HasTexture ? Texture : GenerateTexture();
 
 			Material noiseMaterial = new Material(shader);
 			noiseMaterial.SetVector("_Pos", new Vector4(start.x, start.y, end.x, end.y));
@@ -48,6 +47,8 @@ namespace XNode.Noise.Simple
             
 			GetPort(nameof(output))?.GetConnections()?.ForEach(f => ((NoiseNode)f.node)?.SetTextureDirty());
 			Dirty = false;
+			
+			return Texture;
 		}
 	}
 }

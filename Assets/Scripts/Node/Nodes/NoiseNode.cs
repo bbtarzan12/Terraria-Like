@@ -14,7 +14,7 @@ namespace XNode.Noise
         public bool ShowTextureInEditor { get; set; }
 
         public abstract Texture2D GetTexture();
-        public abstract void GenerateTexture();
+        public abstract Texture2D GenerateTexture();
         public virtual void Update() => Dirty = true;
         
         public override object GetValue(NodePort port) => this;
@@ -42,6 +42,7 @@ namespace XNode.Noise
 
         public void SetTextureDirty() => Dirty = true;
         public NoiseGraph GetGraph => (NoiseGraph) graph;
+        public void RefreshTexture() => DestroyImmediate(Texture);
 
     }
 

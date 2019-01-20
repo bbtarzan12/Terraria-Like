@@ -29,6 +29,9 @@
                 <e p="StepNode.cs" t="Include" />
               </e>
               <e p="NoiseNode.cs" t="Include" />
+              <e p="PostProcessing" t="Include">
+                <e p="DenoiseNode.cs" t="Include" />
+              </e>
               <e p="Procedural" t="Include">
                 <e p="PerlinNode.cs" t="Include" />
                 <e p="RidgedMultiNode.cs" t="Include" />
@@ -78,7 +81,6 @@
             <e p="Step.shader" t="Include" />
           </e>
           <e p="Noises" t="Include">
-            <e p="OldPerlin.shader" t="Include" />
             <e p="Perlin.shader" t="Include" />
             <e p="PerlinNoise.hlsl" t="Include" />
             <e p="RidgedMulti.hlsl" t="Include" />
@@ -86,6 +88,9 @@
             <e p="Simplex.shader" t="Include" />
             <e p="SimplexNoise.hlsl" t="Include" />
             <e p="Terrain.shader" t="Include" />
+          </e>
+          <e p="PostProcessing" t="Include">
+            <e p="Denoise.shader" t="Include" />
           </e>
           <e p="Shapes" t="Include">
             <e p="Gradient.shader" t="Include" />
