@@ -165,8 +165,7 @@ namespace UnityEditor
 
             if (GUILayout.Button("Generate Tiles"))
             {
-                tile.m_Sprites = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(tile.m_DefaultSprite)).OfType<Sprite>().ToArray();
-
+                tile.m_Sprites = AssetDatabase.LoadAllAssetsAtPath($"Assets/Sprites/{target.name}.png").OfType<Sprite>().ToArray();
                 int index = 0;
                 for (int i = 0; i < tile.m_TilingRules.Count; i++)
                 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace XNode.Noise
+namespace XNode.Noise.Simple
 {
 
 	public class ColorNode : NoiseNode
@@ -38,7 +38,5 @@ namespace XNode.Noise
 			GetPort(nameof(output))?.GetConnections()?.ForEach(f => ((NoiseNode)f.node)?.SetTextureDirty());
 			Dirty = false;
 		}
-
-		public override void Update() => Dirty = true;
 	}
 }

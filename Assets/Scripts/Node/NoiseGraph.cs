@@ -2,6 +2,7 @@
 using UnityEngine;
 using XNode;
 using XNode.Noise;
+using XNode.Noise.Master;
 
 [Serializable, CreateAssetMenu]
 public class NoiseGraph : NodeGraph
@@ -34,4 +35,5 @@ public class NoiseGraph : NodeGraph
             }
         }
     }
+   
 }

@@ -12,13 +12,17 @@ namespace XNodeEditor {
         private static Texture2D _nodeBody;
         public static Texture2D nodeHighlight { get { return _nodeHighlight != null ? _nodeHighlight : _nodeHighlight = Resources.Load<Texture2D>("xnode_node_highlight"); } }
         private static Texture2D _nodeHighlight;
-
+        public static Texture2D previewExpand { get { return _previewExpand != null ? _previewExpand : _previewExpand = Resources.Load<Texture2D>("xnode_preview_expand"); } }
+        private static Texture2D _previewExpand;
+        public static Texture2D previewCollapse { get { return _previewCollapse != null ? _previewCollapse : _previewCollapse = Resources.Load<Texture2D>("xnode_preview_collapse"); } }
+        private static Texture2D _previewCollapse;
+        
         // Styles
         public static Styles styles { get { return _styles != null ? _styles : _styles = new Styles(); } }
         public static Styles _styles = null;
         public static GUIStyle OutputPort { get { return new GUIStyle(EditorStyles.label) { alignment = TextAnchor.UpperRight }; } }
         public class Styles {
-            public GUIStyle inputPort, nodeHeader, nodeBody, tooltip, nodeHighlight;
+            public GUIStyle inputPort, nodeHeader, nodeBody, tooltip, nodeHighlight, preview;
 
             public Styles() {
                 GUIStyle baseStyle = new GUIStyle("Label");
@@ -44,6 +48,13 @@ namespace XNodeEditor {
 
                 tooltip = new GUIStyle("helpBox");
                 tooltip.alignment = TextAnchor.MiddleCenter;
+                
+                preview = new GUIStyle();
+                preview.normal.background = NodeEditorResources.previewExpand;
+                preview.onNormal.background = NodeEditorResources.previewCollapse;
+                preview.fixedHeight = 18;
+                preview.fixedWidth = 18;
+                preview.alignment = TextAnchor.MiddleCenter;
             }
         }
 

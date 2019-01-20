@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace XNode.Noise
+namespace XNode.Noise.Blend
 {
 
     public class MixNode : NoiseNode
     {
-        
+        public enum MixType { ADD, SUB, MUL, DIV }
         [Input(ShowBackingValue.Unconnected, ConnectionType.Override)] public NoiseNode input1;
         [Input(ShowBackingValue.Unconnected, ConnectionType.Override)] public NoiseNode input2;
         [Output] public NoiseNode output;

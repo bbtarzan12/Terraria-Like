@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace XNode.Noise
+namespace XNode.Noise.Simple
 {
 
 	[Serializable]
@@ -13,23 +13,20 @@ namespace XNode.Noise
 		public enum GradientMode { Angled, Radial }
 		
 		[Output] public NoiseNode output;
-		
-		public Color color;
-		public Vector2 start;
-		public Vector2 end;
+		public Vector2 start = new Vector2(0, 1.0f);
+		public Vector2 end = new Vector2(0, 0);
 		public GradientMode mode;
 
 		protected override void Init()
 		{
-			base.Init();
 			shader = Shader.Find("Noise/Gradient");
+			base.Init();
 		}
 
 		public override Texture2D GetTexture()
 		{
 			Material noiseMaterial = new Material(shader);
 			noiseMaterial.SetVector("_Pos", new Vector4(start.x, start.y, end.x, end.y));
-			noiseMaterial.SetColor("_Color", color);
 			noiseMaterial.SetInt("_Mode", (int)mode);
 			return TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);
 		}
@@ -45,7 +42,6 @@ namespace XNode.Noise
 
 			Material noiseMaterial = new Material(shader);
 			noiseMaterial.SetVector("_Pos", new Vector4(start.x, start.y, end.x, end.y));
-			noiseMaterial.SetColor("_Color", color);
 			noiseMaterial.SetInt("_Mode", (int)mode);
 
 			Texture = TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);
@@ -53,7 +49,5 @@ namespace XNode.Noise
 			GetPort(nameof(output))?.GetConnections()?.ForEach(f => ((NoiseNode)f.node)?.SetTextureDirty());
 			Dirty = false;
 		}
-
-		public override void Update() => Dirty = true;
 	}
 }

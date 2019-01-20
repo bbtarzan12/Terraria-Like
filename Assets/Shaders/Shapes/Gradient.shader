@@ -3,7 +3,6 @@ Shader "Noise/Gradient"
     Properties
     {
         _Pos ("Position (Start.xy, End.xy)", Vector) = (0,0,1,1)
-        _Color ("Color", color) = (1,1,1,1)
         [Enum(Angled, 0, Radial, 1)] _Mode ("Mode", int) = 0
     }
     SubShader
@@ -20,7 +19,6 @@ Shader "Noise/Gradient"
             
             int _Mode;
             float4 _Pos;
-            float4 _Color;
             
             float Angled(float2 start, float2 end, float2 uv)
             {
@@ -46,11 +44,8 @@ Shader "Noise/Gradient"
             fixed4 frag (v2f_img i) : SV_Target
             {
                 float2 uv = i.uv;
-                float proj = _Mode == 0 ? Angled(_Pos.xy, _Pos.zw, uv) : Radial(_Pos.xy, _Pos.zw, uv);
-                
-                
-                
-                return _Color * proj;
+                float proj = _Mode == 0 ? Angled(_Pos.xy, _Pos.zw, uv) : Radial(_Pos.xy, _Pos.zw, uv);     
+                return proj;
             }
         
             ENDCG

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace XNode.Noise
+namespace XNode.Noise.Math
 {
  
     [Serializable]
@@ -14,8 +14,8 @@ namespace XNode.Noise
 
         protected override void Init()
         {
-            base.Init(); 
             shader = Shader.Find("Noise/Flip");
+            base.Init(); 
         }
 
         public override Texture2D GetTexture()
@@ -50,8 +50,6 @@ namespace XNode.Noise
             GetPort(nameof(output))?.GetConnections()?.ForEach(f => ((NoiseNode)f.node)?.SetTextureDirty());
             Dirty = false;
         }
-
-        public override void Update() => Dirty = true;
     }
 
 }

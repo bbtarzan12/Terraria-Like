@@ -1,6 +1,6 @@
 using UnityEditor;
 using UnityEngine;
-using XNode.Noise;
+using XNode.Noise.Util;
 using XNodeEditor;
 
 [CustomNodeEditor(typeof(PreviewNode))]
@@ -16,38 +16,22 @@ public class PreviewNodeEditor : NodeEditor
             Rect lastRect = GUILayoutUtility.GetLastRect();
             Rect textureRect = new Rect(lastRect)
             {
-                width = 128 * noiseNode.GetGraph.Ratio,
-                height = 128,
-                y = lastRect.y + 2
+                width = GetWidth() * 0.95f,
+                height = GetWidth() * 0.8f / noiseNode.GetGraph.Ratio,
+                y = lastRect.y + EditorGUIUtility.singleLineHeight * 2
             };
             textureRect.x = (GetWidth() - textureRect.width) / 2;
-            textureRect.y = (GetBodyStyle().fixedHeight - textureRect.height) / 2 + 20;
-            EditorGUI.DrawPreviewTexture(textureRect, noiseNode.GetTexture());
-
+            GUILayoutUtility.GetRect(textureRect.width, textureRect.height + EditorGUIUtility.singleLineHeight);
+            EditorGUI.DrawPreviewTexture(textureRect, noiseNode.GetInputTexture);
         }
 
     }
-
-    public override GUIStyle GetBodyStyle()
-    {
-        PreviewNode noiseNode = target as PreviewNode;
-        if (noiseNode != null && noiseNode.HasTexture)
-        {
-            GUIStyle nodeBody = new GUIStyle();
-            nodeBody.normal.background = NodeEditorResources.nodeBody;
-            nodeBody.border = new RectOffset(32, 32, 32, 32);
-            nodeBody.padding = new RectOffset(16, 16, 4, 16);
-            nodeBody.fixedHeight = 200;    
-            return nodeBody;   
-        }
-        return base.GetBodyStyle();
-    }
-
+    
     public override int GetWidth()
     {
         PreviewNode noiseNode = target as PreviewNode;
         if(noiseNode != null && noiseNode.HasTexture)
-            return (int)(160 * noiseNode.GetGraph.Ratio);
+            return (int)(150 * noiseNode.GetGraph.Ratio);
         return base.GetWidth();
     }
 }

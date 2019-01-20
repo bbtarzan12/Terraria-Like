@@ -17,18 +17,31 @@
               <e p="PreviewNodeEditor.cs" t="Include" />
             </e>
             <e p="Nodes" t="Include">
-              <e p="ColorNode.cs" t="Include" />
-              <e p="FlipNode.cs" t="Include" />
-              <e p="GradientNode.cs" t="Include" />
-              <e p="InvertNode.cs" t="Include" />
-              <e p="MixNode.cs" t="Include" />
+              <e p="Blend" t="Include">
+                <e p="MixNode.cs" t="Include" />
+              </e>
+              <e p="Master" t="Include">
+                <e p="OutNode.cs" t="Include" />
+              </e>
+              <e p="Math" t="Include">
+                <e p="FlipNode.cs" t="Include" />
+                <e p="InvertNode.cs" t="Include" />
+                <e p="StepNode.cs" t="Include" />
+              </e>
               <e p="NoiseNode.cs" t="Include" />
-              <e p="OutNode.cs" t="Include" />
-              <e p="PerlinNode.cs" t="Include" />
-              <e p="PreviewNode.cs" t="Include" />
-              <e p="RidgedMultiNode.cs" t="Include" />
-              <e p="SimplexNode.cs" t="Include" />
-              <e p="TerrainNode.cs" t="Include" />
+              <e p="Procedural" t="Include">
+                <e p="PerlinNode.cs" t="Include" />
+                <e p="RidgedMultiNode.cs" t="Include" />
+                <e p="SimplexNode.cs" t="Include" />
+                <e p="TerrainNode.cs" t="Include" />
+              </e>
+              <e p="Simple" t="Include">
+                <e p="ColorNode.cs" t="Include" />
+                <e p="GradientNode.cs" t="Include" />
+              </e>
+              <e p="Util" t="Include">
+                <e p="PreviewNode.cs" t="Include" />
+              </e>
             </e>
             <e p="NoiseGraph.cs" t="Include" />
           </e>
@@ -62,8 +75,10 @@
             <e p="Flip.shader" t="Include" />
             <e p="Invert.shader" t="Include" />
             <e p="Mix.shader" t="Include" />
+            <e p="Step.shader" t="Include" />
           </e>
           <e p="Noises" t="Include">
+            <e p="OldPerlin.shader" t="Include" />
             <e p="Perlin.shader" t="Include" />
             <e p="PerlinNoise.hlsl" t="Include" />
             <e p="RidgedMulti.hlsl" t="Include" />
@@ -73,9 +88,7 @@
             <e p="Terrain.shader" t="Include" />
           </e>
           <e p="Shapes" t="Include">
-            <e p="Box.shader" t="Include" />
-            <e p="BoxGradient.shader" t="Include" />
-            <e p="Circle.shader" t="Include" />
+            <e p="Gradient.shader" t="Include" />
           </e>
         </e>
         <e p="Thrids" t="Include">

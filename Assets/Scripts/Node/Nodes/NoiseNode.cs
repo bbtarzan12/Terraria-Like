@@ -2,10 +2,7 @@ using System;
 using UnityEngine;
 
 namespace XNode.Noise
-{
-
-    public enum MixType { ADD, SUB, MUL, DIV }
-    
+{    
     public abstract class NoiseNode : Node
     {
         protected Shader shader;
@@ -13,13 +10,22 @@ namespace XNode.Noise
         public bool IsShaderInit => shader != null;
         public Texture2D Texture { get; protected set; }
         public bool Dirty { get; protected set; }
+        public bool HasTexture => Texture != null;
+        public bool ShowTextureInEditor { get; set; }
 
         public abstract Texture2D GetTexture();
         public abstract void GenerateTexture();
-        public abstract void Update();
+        public virtual void Update() => Dirty = true;
         
         public override object GetValue(NodePort port) => this;
 
+        protected override void Init()
+        {
+            Texture = null;
+            Update();
+            base.Init();
+        }
+        
         public override void OnRemoveConnection(NodePort port)
         {
             base.OnRemoveConnection(port);
@@ -30,6 +36,7 @@ namespace XNode.Noise
         public override void OnCreateConnection(NodePort from, NodePort to)
         {
             base.OnCreateConnection(from, to);
+            Texture = null;
             Update();
         }
 

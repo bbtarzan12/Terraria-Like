@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -7,6 +8,11 @@ using XNodeEditor;
 [CustomNodeGraphEditor(typeof(NoiseGraph))]
 public class NoiseGraphEditor : NodeGraphEditor
 {
+    public override string GetNodeMenuName(Type type)
+    {
+        return type.Namespace.Contains("XNode.Noise") ? base.GetNodeMenuName(type).Replace("X Node/Noise/", "") : null;
+    }
+
     public override void OnGUI()
     {
         serializedObject.Update();

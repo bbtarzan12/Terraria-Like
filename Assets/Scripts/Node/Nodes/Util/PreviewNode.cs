@@ -2,13 +2,14 @@
 using System;
 using UnityEngine;
 
-namespace XNode.Noise
+namespace XNode.Noise.Util
 {
     [Serializable]
     public class PreviewNode : NoiseNode
     {
         [Input(ShowBackingValue.Never, ConnectionType.Override)] public NoiseNode input;
-
+        
+        public Texture2D GetInputTexture => GetInputValue<NoiseNode>("input")?.Texture;
         public bool HasTexture => GetInputValue<NoiseNode>("input")?.Texture != null;
         public override Texture2D GetTexture() => GetInputValue<NoiseNode>("input")?.Texture;
 
@@ -19,7 +20,5 @@ namespace XNode.Noise
             
             Texture = GetTexture();
         }
-
-        public override void Update() => Dirty = true;
     }
 }

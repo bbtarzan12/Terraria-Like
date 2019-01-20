@@ -1,7 +1,7 @@
 using System.IO;
 using UnityEngine;
 
-namespace XNode.Noise
+namespace XNode.Noise.Master
 {
 
     public class OutNode : NoiseNode
@@ -20,7 +20,5 @@ namespace XNode.Noise
             Texture = GetInputValue<NoiseNode>("input")?.Texture;           
             Dirty = false;
         }
-
-        public override void Update() => Dirty = true;
     }
 }

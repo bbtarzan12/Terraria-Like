@@ -28,7 +28,6 @@ public class MapGenerator : MonoBehaviour
 
                 Color color = texture.GetPixel(x, y);
                 const float threshold = 0.3f;
-                
                 if(color.r > threshold && color.g > threshold && color.b > threshold)
                     tilemap.SetTile(tilePos, whiteTile);
                 else if(color.r > threshold && color.g > threshold)

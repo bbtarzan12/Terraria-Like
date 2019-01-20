@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-namespace XNode.Noise
+namespace XNode.Noise.Procedural
 {
 
 	[Serializable]
@@ -13,14 +13,14 @@ namespace XNode.Noise
 		
 		[Output] public NoiseNode output;
 		public float x;
-		public float height;
-		public float scale;
-		public int fractal;
+		public float height = 0.5f;
+		public float scale = 10;
+		[Range(1, 10)] public int fractal = 1;
 
 		protected override void Init()
 		{
-			base.Init();
 			shader = Shader.Find("Noise/Terrain");
+			base.Init();
 		}
 
 		public override Texture2D GetTexture()
@@ -55,7 +55,5 @@ namespace XNode.Noise
 			GetPort(nameof(output))?.GetConnections()?.ForEach(f => ((NoiseNode)f.node)?.SetTextureDirty());
 			Dirty = false;
 		}
-
-		public override void Update() => Dirty = true;
 	}
 }
