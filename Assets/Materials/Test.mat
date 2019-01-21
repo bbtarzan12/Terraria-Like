@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Test
-  m_Shader: {fileID: 4800000, guid: 88634ca435db94d4abe07865a98eba79, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4a842a342976cb24d85c198627a9006c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -28,12 +28,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Fractal: 1
+    - _Fractal: 10.57
+    - _Height: 0.657
     - _Mode: 0
     - _Ratio: 1
-    - _Scale: 0.49
+    - _Scale: 20
+    - _Smooth: 0.48
     - _Threshold: 0.64
-    - _X: -2.7
+    - _X: 500
     - _Y: -2.27
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

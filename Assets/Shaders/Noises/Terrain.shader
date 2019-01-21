@@ -6,6 +6,7 @@ Shader "Noise/Terrain"
         _Height ("Height", range(0,1)) = 0.5
         _Scale ("Scale", float) = 1
         _Fractal ("Fractal", int) = 1
+        _Smooth ("Smooth", float) = 1
         _Ratio ("Ratio", float) = 1
     }
     SubShader
@@ -25,6 +26,7 @@ Shader "Noise/Terrain"
             float _Height;
             float _Scale;
             float _Ratio;
+            float _Smooth;
             int _Fractal;
 
             fixed4 frag (v2f_img i) : SV_Target
@@ -33,13 +35,13 @@ Shader "Noise/Terrain"
                 float o = 0.5;
                 float s = 1;       
                 float w = 0.5;
-                float2 uv = float2(((i.uv-0.5) + float2(_X, 0)) * _Scale);
+                float2 uv = float2((i.uv-0.5) * _Scale + float2(_X, 0));
 
                 for (int i = 0; i < _Fractal; i++)
                 {
                     float2 coord = float2(uv.x * _Ratio, 0) * s;
 
-                    o += snoise(coord) * w;
+                    o += snoise(float2(coord.x * _Smooth, 0)) * w;
         
                     s *= 2.0;
                     w *= 0.5;

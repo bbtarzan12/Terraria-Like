@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEngine;
 
@@ -25,6 +26,7 @@ namespace XNode.Noise.Master
             Texture = inputNoise.Texture == null ? inputNoise.GenerateTexture() : inputNoise.Texture;        
             Dirty = false;
             
+            GC.Collect();
             return Texture;
         }
     }

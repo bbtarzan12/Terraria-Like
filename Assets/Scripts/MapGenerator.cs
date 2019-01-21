@@ -21,7 +21,9 @@ public class MapGenerator : MonoBehaviour
         Debug.Log($"Start {nameof(InitMap)}");
         for (int x = 0; x < mapSize.x; x++)
         {
-            Debug.Log($"Init Map : {((float)x / mapSize.x):P}");
+            float percent = (float) x / mapSize.x;
+            Debug.Log($"Init Map : {percent:P}");
+            
             for (int y = 0; y < mapSize.y; y++)
             {
                 Vector3Int tilePos = new Vector3Int(x, y, 0);
@@ -41,7 +43,6 @@ public class MapGenerator : MonoBehaviour
                 else
                     tilemap.SetTile(tilePos, null);
             }
-
             await Task.Yield();
         }
         Debug.Log($"End {nameof(InitMap)} {(Time.time - time):F}");
@@ -55,7 +56,7 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         //int[,] map = GenerateMapArray(mapSize.x, mapSize.y, threshold, scale, seed);
-        InitMap(graph.mapSize, graph.GetTexture(), tilemap, redTile, greenTile, blueTile, yellowTile, whiteTile);
+        //InitMap(graph.mapSize, graph.GetTexture(), tilemap, redTile, greenTile, blueTile, yellowTile, whiteTile);
     }
 
     void Update()

@@ -27,9 +27,6 @@ MonoBehaviour:
   - {fileID: 114596470838586928}
   - {fileID: 114495409338612688}
   - {fileID: 114620442303315000}
-  - {fileID: 114817738656415024}
-  - {fileID: 114924465146868978}
-  - {fileID: 114277271894543618}
   - {fileID: 114730462767892534}
   - {fileID: 114771611220644938}
   - {fileID: 114407853184778110}
@@ -84,10 +81,65 @@ MonoBehaviour:
   - {fileID: 114698415518371716}
   - {fileID: 114222107677993666}
   - {fileID: 114003254405121834}
-  - {fileID: 0}
   - {fileID: 114401621497991940}
   - {fileID: 114166558890894172}
+  - {fileID: 114635269692147054}
+  - {fileID: 114755339405245594}
+  - {fileID: 114641279184460514}
+  - {fileID: 114360480880618572}
+  - {fileID: 114002024229640398}
+  - {fileID: 114343272745191804}
+  - {fileID: 114907664609256502}
+  - {fileID: 114167706056896806}
+  - {fileID: 114777371223923894}
+  - {fileID: 114372296779091144}
+  - {fileID: 114101679917580654}
+  - {fileID: 0}
   mapSize: {x: 1024, y: 512}
+--- !u!114 &114002024229640398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ac05d272293274793806bfe1b133d4, type: 3}
+  m_Name: Step Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -888, y: 1256}
+  ports:
+    m_keys:
+    - input
+    - output
+    m_values:
+    - _fieldName: input
+      _node: {fileID: 114002024229640398}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114343272745191804}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114002024229640398}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input2
+        node: {fileID: 114907664609256502}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  threshold: 0.406
 --- !u!114 &114003254405121834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +153,7 @@ MonoBehaviour:
   m_Name: Denoise Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2232, y: 520}
+  position: {x: 2760, y: 520}
   ports:
     m_keys:
     - input
@@ -113,7 +165,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114337880133921938}
+        node: {fileID: 114101679917580654}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -131,7 +183,8 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  minRoomSize: 150
+  minRoomSize: 20
+  denoiseType: 0
 --- !u!114 &114008650073020054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +219,7 @@ MonoBehaviour:
   height: 0.73
   scale: 15
   fractal: 4
+  smooth: 0.1
 --- !u!114 &114013879042642844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +303,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114498909521386952}
+        node: {fileID: 114372296779091144}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -339,7 +393,7 @@ MonoBehaviour:
   m_Name: Terrain Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1752, y: 808}
+  position: {x: -1960, y: 88}
   ports:
     m_keys:
     - output
@@ -360,6 +414,7 @@ MonoBehaviour:
   height: 0.7
   scale: 23.62
   fractal: 5
+  smooth: 1
 --- !u!114 &114047004691706400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +549,7 @@ MonoBehaviour:
   m_Name: Mix Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2648, y: 504}
+  position: {x: 3176, y: 504}
   ports:
     m_keys:
     - input1
@@ -595,6 +650,51 @@ MonoBehaviour:
   input2: {fileID: 0}
   output: {fileID: 0}
   mixType: 2
+--- !u!114 &114101679917580654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c6dd6a594455543b25b855df121a96, type: 3}
+  m_Name: Denoise Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2344, y: 520}
+  ports:
+    m_keys:
+    - input
+    - output
+    m_values:
+    - _fieldName: input
+      _node: {fileID: 114101679917580654}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114337880133921938}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114101679917580654}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114003254405121834}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  minRoomSize: 2
+  denoiseType: 1
 --- !u!114 &114102775513673268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,10 +725,11 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   output: {fileID: 0}
-  x: 880.29
-  height: 0.13
-  scale: 10
+  x: 15050
+  height: 0.17
+  scale: 13.66
   fractal: 7
+  smooth: 0.11
 --- !u!114 &114110508025619342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,8 +929,8 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   output: {fileID: 0}
-  offset: {x: 778, y: 150}
-  scale: 8.88
+  offset: {x: 778, y: 500}
+  scale: 6.73
   fractal: 1
 --- !u!114 &114167265050691372
 MonoBehaviour:
@@ -875,6 +976,49 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   threshold: 0.923
+--- !u!114 &114167706056896806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a876bf7c50d984aa6f01c05e2f2306, type: 3}
+  m_Name: Invert Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -504, y: 1256}
+  ports:
+    m_keys:
+    - input
+    - output
+    m_values:
+    - _fieldName: input
+      _node: {fileID: 114167706056896806}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114360480880618572}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114167706056896806}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input2
+        node: {fileID: 114777371223923894}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
 --- !u!114 &114169392370578310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,7 +1105,8 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  minRoomSize: 300
+  minRoomSize: 50
+  denoiseType: 0
 --- !u!114 &114222107677993666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,63 +1207,6 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
---- !u!114 &114277271894543618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd2cdf1015514640b671bc8392bd25fb, type: 3}
-  m_Name: Mix Node
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 312, y: 824}
-  ports:
-    m_keys:
-    - input1
-    - input2
-    - output
-    m_values:
-    - _fieldName: input1
-      _node: {fileID: 114277271894543618}
-      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114620442303315000}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _dynamic: 0
-    - _fieldName: input2
-      _node: {fileID: 114277271894543618}
-      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114924465146868978}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114277271894543618}
-      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input1
-        node: {fileID: 114498909521386952}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _dynamic: 0
-  input1: {fileID: 0}
-  input2: {fileID: 0}
-  output: {fileID: 0}
-  mixType: 2
 --- !u!114 &114278701658703244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,7 +1400,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 114003254405121834}
+        node: {fileID: 114101679917580654}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1321,6 +1409,39 @@ MonoBehaviour:
   input2: {fileID: 0}
   output: {fileID: 0}
   mixType: 2
+--- !u!114 &114343272745191804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bd05cf3dd48af8574c2abe8351e94, type: 3}
+  m_Name: Simplex Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1192, y: 1256}
+  ports:
+    m_keys:
+    - output
+    m_values:
+    - _fieldName: output
+      _node: {fileID: 114343272745191804}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114002024229640398}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  offset: {x: 200, y: 500}
+  scale: 12.47
+  fractal: 4
 --- !u!114 &114360294567299276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,6 +1491,123 @@ MonoBehaviour:
       connections:
       - fieldName: input1
         node: {fileID: 114740134935409376}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input1: {fileID: 0}
+  input2: {fileID: 0}
+  output: {fileID: 0}
+  mixType: 2
+--- !u!114 &114360480880618572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2cdf1015514640b671bc8392bd25fb, type: 3}
+  m_Name: Mix Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1224, y: 904}
+  ports:
+    m_keys:
+    - input1
+    - input2
+    - output
+    m_values:
+    - _fieldName: input1
+      _node: {fileID: 114360480880618572}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114635269692147054}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input2
+      _node: {fileID: 114360480880618572}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114641279184460514}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114360480880618572}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input1
+        node: {fileID: 114907664609256502}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: 114167706056896806}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input1: {fileID: 0}
+  input2: {fileID: 0}
+  output: {fileID: 0}
+  mixType: 2
+--- !u!114 &114372296779091144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2cdf1015514640b671bc8392bd25fb, type: 3}
+  m_Name: Mix Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 392, y: 776}
+  ports:
+    m_keys:
+    - input1
+    - input2
+    - output
+    m_values:
+    - _fieldName: input1
+      _node: {fileID: 114372296779091144}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114498909521386952}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input2
+      _node: {fileID: 114372296779091144}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114777371223923894}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114372296779091144}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input1
+        node: {fileID: 114015691845682852}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1484,7 +1722,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  threshold: 0.582
+  threshold: 0.666
 --- !u!114 &114407853184778110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1519,6 +1757,7 @@ MonoBehaviour:
   height: 0.81
   scale: 23.62
   fractal: 3
+  smooth: 0.5
 --- !u!114 &114410646719933982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,10 +1845,11 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   output: {fileID: 0}
-  x: 12
-  height: 0.1
+  x: 22.47
+  height: 0.13
   scale: 10
-  fractal: 1
+  fractal: 6
+  smooth: 0.18
 --- !u!114 &114446667036855114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1742,7 +1982,7 @@ MonoBehaviour:
   m_Name: Mix Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1064, y: 808}
+  position: {x: -1272, y: 88}
   ports:
     m_keys:
     - input1
@@ -1805,7 +2045,7 @@ MonoBehaviour:
   m_Name: Mix Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 984, y: 840}
+  position: {x: 8, y: 776}
   ports:
     m_keys:
     - input1
@@ -1818,7 +2058,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 114277271894543618}
+        node: {fileID: 114620442303315000}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -1840,7 +2080,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input1
-        node: {fileID: 114015691845682852}
+        node: {fileID: 114372296779091144}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1862,7 +2102,7 @@ MonoBehaviour:
   m_Name: Mix Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 3032, y: 520}
+  position: {x: 3560, y: 520}
   ports:
     m_keys:
     - input1
@@ -2110,7 +2350,7 @@ MonoBehaviour:
   m_Name: Step Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -712, y: 1160}
+  position: {x: -920, y: 440}
   ports:
     m_keys:
     - input
@@ -2197,7 +2437,7 @@ MonoBehaviour:
   m_Name: Flip Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1416, y: 1160}
+  position: {x: -1624, y: 440}
   ports:
     m_keys:
     - input
@@ -2242,7 +2482,7 @@ MonoBehaviour:
   m_Name: Terrain Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1752, y: 1160}
+  position: {x: -1960, y: 440}
   ports:
     m_keys:
     - output
@@ -2263,6 +2503,7 @@ MonoBehaviour:
   height: 0.64
   scale: 23.62
   fractal: 6
+  smooth: 1
 --- !u!114 &114607927824311868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2319,7 +2560,7 @@ MonoBehaviour:
   m_Name: Mix Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -296, y: 808}
+  position: {x: -680, y: 88}
   ports:
     m_keys:
     - input1
@@ -2354,7 +2595,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input1
-        node: {fileID: 114277271894543618}
+        node: {fileID: 114498909521386952}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -2363,6 +2604,86 @@ MonoBehaviour:
   input2: {fileID: 0}
   output: {fileID: 0}
   mixType: 2
+--- !u!114 &114635269692147054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252a4de4422e2a8418d17902582dad4d, type: 3}
+  m_Name: Terrain Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1912, y: 904}
+  ports:
+    m_keys:
+    - output
+    m_values:
+    - _fieldName: output
+      _node: {fileID: 114635269692147054}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input1
+        node: {fileID: 114360480880618572}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  x: 404
+  height: 0.65
+  scale: 23.62
+  fractal: 5
+  smooth: 1
+--- !u!114 &114641279184460514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84136d8d60cea3c44b75733a84954549, type: 3}
+  m_Name: Flip Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1576, y: 1256}
+  ports:
+    m_keys:
+    - input
+    - output
+    m_values:
+    - _fieldName: input
+      _node: {fileID: 114641279184460514}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114755339405245594}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114641279184460514}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input2
+        node: {fileID: 114360480880618572}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  FlipX: 0
+  FlipY: 1
 --- !u!114 &114648679488436930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2477,7 +2798,7 @@ MonoBehaviour:
   m_Name: Mix Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 3480, y: 472}
+  position: {x: 4008, y: 472}
   ports:
     m_keys:
     - input1
@@ -2602,6 +2923,7 @@ MonoBehaviour:
   height: 0.08
   scale: 17.9
   fractal: 5
+  smooth: 0.5
 --- !u!114 &114737148694454292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2636,6 +2958,7 @@ MonoBehaviour:
   height: 0.52
   scale: 23.62
   fractal: 5
+  smooth: 0.5
 --- !u!114 &114740134935409376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2706,7 +3029,7 @@ MonoBehaviour:
   m_Name: Ridged Multi Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1064, y: 1160}
+  position: {x: -1272, y: 440}
   ports:
     m_keys:
     - output
@@ -2760,6 +3083,41 @@ MonoBehaviour:
       _dynamic: 0
   output: {fileID: 0}
   color: {r: 0, g: 1, b: 0, a: 0}
+--- !u!114 &114755339405245594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252a4de4422e2a8418d17902582dad4d, type: 3}
+  m_Name: Terrain Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1912, y: 1256}
+  ports:
+    m_keys:
+    - output
+    m_values:
+    - _fieldName: output
+      _node: {fileID: 114755339405245594}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114641279184460514}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  x: 70
+  height: 0.64
+  scale: 23.62
+  fractal: 6
+  smooth: 1
 --- !u!114 &114767067193278806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2806,7 +3164,7 @@ MonoBehaviour:
   m_Name: Out Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 3816, y: 504}
+  position: {x: 4344, y: 504}
   ports:
     m_keys:
     - input
@@ -2823,6 +3181,63 @@ MonoBehaviour:
       _connectionType: 1
       _dynamic: 0
   input: {fileID: 0}
+--- !u!114 &114777371223923894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2cdf1015514640b671bc8392bd25fb, type: 3}
+  m_Name: Mix Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -8, y: 1064}
+  ports:
+    m_keys:
+    - input1
+    - input2
+    - output
+    m_values:
+    - _fieldName: input1
+      _node: {fileID: 114777371223923894}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114907664609256502}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input2
+      _node: {fileID: 114777371223923894}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114167706056896806}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114777371223923894}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input2
+        node: {fileID: 114372296779091144}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input1: {fileID: 0}
+  input2: {fileID: 0}
+  output: {fileID: 0}
+  mixType: 0
 --- !u!114 &114782996069475018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2867,39 +3282,6 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   threshold: 0.9
---- !u!114 &114817738656415024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273bd05cf3dd48af8574c2abe8351e94, type: 3}
-  m_Name: Simplex Node
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -360, y: 1160}
-  ports:
-    m_keys:
-    - output
-    m_values:
-    - _fieldName: output
-      _node: {fileID: 114817738656415024}
-      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 114924465146868978}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _dynamic: 0
-  output: {fileID: 0}
-  offset: {x: 100, y: 700}
-  scale: 7.66
-  fractal: 4
 --- !u!114 &114836280853900834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3003,7 +3385,7 @@ MonoBehaviour:
   m_Name: Invert Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 312, y: 1128}
+  position: {x: -488, y: 472}
   ports:
     m_keys:
     - input
@@ -3157,6 +3539,63 @@ MonoBehaviour:
   output: {fileID: 0}
   FlipX: 0
   FlipY: 1
+--- !u!114 &114907664609256502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2cdf1015514640b671bc8392bd25fb, type: 3}
+  m_Name: Mix Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -552, y: 920}
+  ports:
+    m_keys:
+    - input1
+    - input2
+    - output
+    m_values:
+    - _fieldName: input1
+      _node: {fileID: 114907664609256502}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114360480880618572}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input2
+      _node: {fileID: 114907664609256502}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114002024229640398}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114907664609256502}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input1
+        node: {fileID: 114777371223923894}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input1: {fileID: 0}
+  input2: {fileID: 0}
+  output: {fileID: 0}
+  mixType: 2
 --- !u!114 &114911040990497626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3247,50 +3686,6 @@ MonoBehaviour:
   input2: {fileID: 0}
   output: {fileID: 0}
   mixType: 0
---- !u!114 &114924465146868978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ac05d272293274793806bfe1b133d4, type: 3}
-  m_Name: Step Node
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -40, y: 1160}
-  ports:
-    m_keys:
-    - input
-    - output
-    m_values:
-    - _fieldName: input
-      _node: {fileID: 114924465146868978}
-      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output
-        node: {fileID: 114817738656415024}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 114924465146868978}
-      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input2
-        node: {fileID: 114277271894543618}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  output: {fileID: 0}
-  threshold: 0.406
 --- !u!114 &114942720373779482
 MonoBehaviour:
   m_ObjectHideFlags: 0

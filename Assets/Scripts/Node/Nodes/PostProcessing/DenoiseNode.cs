@@ -15,12 +15,17 @@ namespace XNode.Noise.PostProcessing
     [Serializable]
     public class DenoiseNode : NoiseNode
     {
+        public enum DenoiseType { Erase, Fill }
         [Input(ShowBackingValue.Unconnected, ConnectionType.Override)] public NoiseNode input;
         [Output] public NoiseNode output;
         public int minRoomSize = 5;
+        public DenoiseType denoiseType = DenoiseType.Erase;
 
         JobHandle jobHandle;
-        
+
+        bool GetDenoiseCondition(Color color) => denoiseType == DenoiseType.Erase ? color.maxColorComponent <= 0 : color.maxColorComponent > 0;
+        Color GetDenoiseColor() => denoiseType == DenoiseType.Erase ? Color.black : Color.white;
+  
         public override Texture2D GetTexture()
         {
             Texture2D texture = ((NoiseNode) GetPort(nameof(input)).Connection.node).GetTexture();
@@ -31,7 +36,7 @@ namespace XNode.Noise.PostProcessing
             HashSet<int> visited = new HashSet<int>();
             for (int i = 0; i < colors.Length; i++)
             {
-                if (colors[i].maxColorComponent <= 0)
+                if (GetDenoiseCondition(colors[i]))
                     continue;
                 
                 Vector2Int coord = new Vector2Int(i % size.x, i / size.x );
@@ -51,7 +56,7 @@ namespace XNode.Noise.PostProcessing
 
                 foreach (Vector2Int coord in region)
                 {
-                    colors[coord.x + coord.y * size.x] = Color.black;
+                    colors[coord.x + coord.y * size.x] = GetDenoiseColor();
                 }
             }
             
@@ -80,7 +85,7 @@ namespace XNode.Noise.PostProcessing
                         Vector2Int neighborTile = new Vector2Int(x, y);
                         
                         if (visited.Contains(index)) continue;
-                        if(map[index].maxColorComponent <= 0) continue;
+                        if(GetDenoiseCondition(map[index])) continue;
                         
                         visited.Add(index);
                         queue.Enqueue(neighborTile);
@@ -110,7 +115,7 @@ namespace XNode.Noise.PostProcessing
             HashSet<int> visited = new HashSet<int>();
             for (int i = 0; i < colors.Length; i++)
             {
-                if (colors[i].maxColorComponent <= 0)
+                if (GetDenoiseCondition(colors[i]))
                     continue;
                 
                 Vector2Int coord = new Vector2Int(i % size.x, i / size.x );
@@ -130,7 +135,7 @@ namespace XNode.Noise.PostProcessing
 
                 foreach (Vector2Int coord in region)
                 {
-                    colors[coord.x + coord.y * size.x] = Color.black;
+                    colors[coord.x + coord.y * size.x] = GetDenoiseColor();
                 }
             }
             

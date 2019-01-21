@@ -16,6 +16,7 @@ namespace XNode.Noise.Procedural
 		public float height = 0.5f;
 		public float scale = 10;
 		[Range(1, 10)] public int fractal = 1;
+		public float smooth = 1;
 
 		protected override void Init()
 		{
@@ -31,6 +32,7 @@ namespace XNode.Noise.Procedural
 			noiseMaterial.SetFloat("_Scale", scale);
 			noiseMaterial.SetInt("_Fractal", fractal);
 			noiseMaterial.SetFloat("_Ratio", GetGraph.Ratio);
+			noiseMaterial.SetFloat("_Smooth", smooth);
 			return TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);
 		}
 
@@ -48,6 +50,7 @@ namespace XNode.Noise.Procedural
 			noiseMaterial.SetFloat("_Scale", scale);
 			noiseMaterial.SetInt("_Fractal", fractal);
 			noiseMaterial.SetFloat("_Ratio", GetGraph.Ratio);
+			noiseMaterial.SetFloat("_Smooth", smooth);
 
 			Texture = TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);
             
