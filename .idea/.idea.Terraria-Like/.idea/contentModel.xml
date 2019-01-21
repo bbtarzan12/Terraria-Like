@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="export.txt" t="Include" />
         <e p="Scripts" t="Include">
           <e p="ChunkGenerator.cs" t="Include" />
           <e p="MapGenerator.cs" t="Include" />
@@ -178,6 +179,9 @@
               </e>
             </e>
           </e>
+        </e>
+        <e p="Tiles" t="Include">
+          <e p="export.txt" t="Include" />
         </e>
         <e p="xNode" t="Include">
           <e p="Scripts" t="Include">

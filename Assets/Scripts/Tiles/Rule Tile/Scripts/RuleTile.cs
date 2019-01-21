@@ -76,6 +76,9 @@ namespace UnityEngine
                 public const int DontCare = 0;
                 public const int This = 1;
                 public const int NotThis = 2;
+                public const int Air = 3;
+                public const int Dirt = 4;
+                public const int NotDirt = 5;
             }
             public enum Transform { Fixed, Rotated, MirrorX, MirrorY }
             public enum OutputSprite { Single, Random, Animation }
@@ -230,6 +233,8 @@ namespace UnityEngine
             {
                 case TilingRule.Neighbor.This: return tile == m_Self;
                 case TilingRule.Neighbor.NotThis: return tile != m_Self;
+                case TilingRule.Neighbor.Dirt: return tile != null && tile.name == "Dirt";
+                case TilingRule.Neighbor.NotDirt: return tile != null && tile.name != "Dirt";
             }
             return true;
         }

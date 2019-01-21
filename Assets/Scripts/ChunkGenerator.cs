@@ -58,7 +58,7 @@ public class ChunkGenerator : MonoBehaviour
         tileBases = new TileBase[arraySize];
         positions = new Vector3Int[arraySize];
 
-        StartCoroutine(nameof(ProcessTileQueue));
+        ProcessTileQueue();
     }
 
     void LateUpdate()
@@ -170,12 +170,12 @@ public class ChunkGenerator : MonoBehaviour
         tilePositions.Dispose();
     }
 
-    IEnumerator ProcessTileQueue()
+    async void ProcessTileQueue()
     {
         while (true)
         {
             while(tileQueue.Count == 0)
-                yield return null;
+                await Task.Yield();
 
             TileQueueData data = tileQueue.Dequeue();
 
@@ -185,7 +185,7 @@ public class ChunkGenerator : MonoBehaviour
                 ArraySegment<Vector3Int> positionSegment = new ArraySegment<Vector3Int>(data.positions, i * segment, segment);
                 ArraySegment<TileBase> tilesSegment = new ArraySegment<TileBase>(data.tiles, i * segment, segment);
                 tilemap.SetTiles(positionSegment.ToArray(), tilesSegment.ToArray());
-                yield return null;
+                await Task.Yield();
             }
         }
     }

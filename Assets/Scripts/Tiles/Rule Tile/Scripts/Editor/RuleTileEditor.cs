@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Linq;
 using UnityEditorInternal;
@@ -163,18 +164,69 @@ namespace UnityEditor
 
             EditorGUILayout.Space();
 
-            if (GUILayout.Button("Generate Tiles"))
+            if (GUILayout.Button("Export Tiles"))
             {
-                tile.m_Sprites = AssetDatabase.LoadAllAssetsAtPath($"Assets/Sprites/{target.name}.png").OfType<Sprite>().ToArray();
-                int index = 0;
-                for (int i = 0; i < tile.m_TilingRules.Count; i++)
+                string path = Application.dataPath + "/Tiles/export.txt";
+
+                StreamWriter writer = new StreamWriter(path, false);
+                
+                foreach (var rule in tile.m_TilingRules)
                 {
-                    var rule = tile.m_TilingRules[i];
-                    for (int j = 0; j < rule.m_Sprites.Length; j++)
+                    foreach (var sprite in rule.m_Sprites)
                     {
-                        rule.m_Sprites[j] = tile.m_Sprites[index];
-                        index++;
+                        writer.WriteLine(sprite.name.Replace($"{target.name}_", ""));
                     }
+
+                    foreach (var neighbor in rule.m_Neighbors)
+                    {
+                        writer.WriteLine(neighbor);
+                    }
+                }
+                
+                writer.Close();
+            }
+
+            if (GUILayout.Button("Import Tiles"))
+            {
+                TextAsset data = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tiles/export.txt");
+                Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath($"Assets/Sprites/Ores/{target.name}.png").OfType<Sprite>().ToArray();
+                
+                if(sprites.Length == 0)
+                    Debug.LogError($"Fail to Load Assets/Sprites/Ores/{target.name}.png");
+                
+                List<string> text = new List<string>(data.text.Split('\n'));
+                int index = 0;
+                bool isDirt = target.name == "Dirt";
+                List<RuleTile.TilingRule> rules = new List<RuleTile.TilingRule>();
+                for (int i = 0; i < 61; i++)
+                {
+                    var rule = new RuleTile.TilingRule();
+                    rule.m_Sprites = new Sprite[3];
+                    rule.m_Neighbors = new int[8];
+                    rule.m_Output = RuleTile.TilingRule.OutputSprite.Random;
+
+                    for (int j = 0; j < 3; j++)
+                    {
+                        rule.m_Sprites[j] = sprites[int.Parse(text[index++])];
+                    }
+
+                    for (int j = 0; j < 8; j++)
+                    {
+                        int neighbor = int.Parse(text[index++]);
+                        if (neighbor == 4 && isDirt)
+                            neighbor = 5;
+                        
+                        rule.m_Neighbors[j] = neighbor;
+                    }
+
+                    rules.Add(rule);
+                }
+
+                tile.m_DefaultSprite = sprites[0];
+                tile.m_TilingRules.Clear();
+                foreach (var rule in rules)
+                {
+                    tile.m_TilingRules.Add(rule);
                 }
             }
             
