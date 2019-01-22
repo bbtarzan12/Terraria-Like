@@ -1894,7 +1894,7 @@ MonoBehaviour:
   m_Name: Color Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 920, y: 3784}
+  position: {x: 856, y: 3752}
   ports:
     m_keys:
     - output

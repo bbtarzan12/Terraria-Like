@@ -13,6 +13,7 @@
           <e p="MapGenerator.cs" t="Include" />
           <e p="Node" t="Include">
             <e p="Editor" t="Include">
+              <e p="ColorNodeEditor.cs" t="Include" />
               <e p="NoiseGraphEditor.cs" t="Include" />
               <e p="NoiseNodeEditor.cs" t="Include" />
               <e p="OutNodeEditor.cs" t="Include" />

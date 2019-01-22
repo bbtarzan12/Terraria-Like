@@ -1093,11 +1093,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkSize: {x: 64, y: 64}
   playerCamera: {fileID: 1374460175}
-  redTile: {fileID: 0}
-  greenTile: {fileID: 0}
-  blueTile: {fileID: 0}
-  yellowTile: {fileID: 0}
-  whiteTile: {fileID: 0}
+  redTile: {fileID: 11400000, guid: 574b57c3cf5bb8848800ad687a5d5357, type: 2}
+  greenTile: {fileID: 11400000, guid: 83090d6013a95a143a3d56bd9c9d10de, type: 2}
+  blueTile: {fileID: 11400000, guid: 9e5c173e524121441bb76f7823d2c2c9, type: 2}
+  yellowTile: {fileID: 11400000, guid: 54ac376ba5e1f8040900203f96955bde, type: 2}
+  whiteTile: {fileID: 11400000, guid: 387b5f39d58aeb54fb264f1489b0eb8a, type: 2}
   graph: {fileID: 11400000, guid: 04bae93ece6416a4a964d31cc777d027, type: 2}
 --- !u!1 &1788948896
 GameObject:

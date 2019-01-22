@@ -34,6 +34,7 @@ namespace UnityEngine
         public Sprite m_DefaultSprite;
         public GameObject m_DefaultGameObject;
         public Tile.ColliderType m_DefaultColliderType = Tile.ColliderType.Sprite;
+        public Color color;
         public TileBase m_Self
         {
             get { return m_OverrideSelf ? m_OverrideSelf : this; }
