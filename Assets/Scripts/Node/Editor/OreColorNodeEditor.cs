@@ -41,6 +41,7 @@ public class OreColorNodeEditor : NodeEditor
         
         EditorGUI.BeginDisabledGroup(true);
         noiseNode.color = EditorGUILayout.ColorField("Ore Color", oreColors.Values.ToArray()[noiseNode.oreIndex]);
+        noiseNode.color.a = 1;
         EditorGUI.EndDisabledGroup();
         
         if (EditorGUI.EndChangeCheck())

@@ -16,9 +16,8 @@ namespace XNode.Noise.Blend
 
         protected override void Init()
         {
-            base.Init();
-            
             shader = Shader.Find("Noise/Mix");
+            base.Init();
         }
 
         public override Texture2D GetTexture()
@@ -36,6 +35,9 @@ namespace XNode.Noise.Blend
             if (!IsShaderInit)
                 return Texture2D.whiteTexture;
 
+            if (!GetInputPort(nameof(input1)).IsConnected || !GetInputPort(nameof(input2)).IsConnected)
+                return Texture2D.whiteTexture;
+                
             if (!Dirty)
                 return HasTexture ? Texture : GenerateTexture();
 

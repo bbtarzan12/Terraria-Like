@@ -234,8 +234,8 @@ namespace UnityEngine
             {
                 case TilingRule.Neighbor.This: return tile == m_Self;
                 case TilingRule.Neighbor.NotThis: return tile != m_Self;
-                case TilingRule.Neighbor.Dirt: return tile != null && tile.name == "Dirt";
-                case TilingRule.Neighbor.NotDirt: return tile != null && tile.name != "Dirt";
+                case TilingRule.Neighbor.Dirt: return tile != null && tile.name.Equals("Dirt");
+                case TilingRule.Neighbor.NotDirt: return tile != null && !tile.name.Equals("Dirt");
             }
             return true;
         }
