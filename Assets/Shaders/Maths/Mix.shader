@@ -4,7 +4,7 @@ Shader "Noise/Mix"
     {
         _Texture1 ("Texture 1", 2D) = "" 
         _Texture2 ("Texture 2", 2D) = ""
-        [Enum(ADD, 0, SUB, 1, MUL, 2, DIV, 3)] _Mode ("Mode", int) = 0
+        [Enum(ADD, 0, SUB, 1, MUL, 2, DIV, 3, OVERADD, 4, OVERMUL, 5)] _Mode ("Mode", int) = 0
         
     }
      
@@ -38,6 +38,30 @@ Shader "Noise/Mix"
                     case 1: return float4((tex1Color - tex2Color).rgb,1);
                     case 2: return float4((tex1Color * tex2Color).rgb,1);
                     case 3: return float4((tex1Color / tex2Color).rgb,1);
+                    case 4: 
+                    {
+                        float maxTex1 = max(tex1Color.r, max(tex1Color.g, tex1Color.b));
+                        float maxTex2 = max(tex2Color.r, max(tex2Color.g, tex2Color.b));
+                        if(maxTex1 != 0 && maxTex2 != 0)
+                            return tex2Color;
+                        else if (maxTex1 != 0)
+                            return tex1Color;
+                        else
+                            return tex2Color;
+                    }
+
+                    case 5:
+                    {
+                        float maxTex1 = max(tex1Color.r, max(tex1Color.g, tex1Color.b));
+                        float maxTex2 = max(tex2Color.r, max(tex2Color.g, tex2Color.b));
+                        
+                        if(maxTex1 != 0 && maxTex2 != 0)
+                            return tex2Color;
+                        else if(maxTex1 != 0)
+                            return tex1Color;
+                        else
+                            return tex1Color;
+                    }
                     default: return float4(0,0,0,1);
                 }
             }

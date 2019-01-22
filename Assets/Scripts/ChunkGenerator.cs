@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TMPro;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
@@ -14,11 +15,8 @@ public class ChunkGenerator : MonoBehaviour
     [SerializeField] Vector2Int chunkSize;
     [SerializeField] Camera playerCamera;
 
-    [SerializeField] TileBase redTile;
-    [SerializeField] TileBase greenTile;
-    [SerializeField] TileBase blueTile;
-    [SerializeField] TileBase yellowTile;
-    [SerializeField] TileBase whiteTile;
+    [SerializeField] ColorTilebaseDictionary tileDictionary;
+    TileBase[] tiles;
     [SerializeField] NoiseGraph graph;
     Texture2D mapTexture;
     Color[] mapArray;
@@ -47,6 +45,17 @@ public class ChunkGenerator : MonoBehaviour
         tilemap = GetComponent<Tilemap>();
         playerTransform = playerCamera.transform;
         tileQueue = new Queue<TileQueueData>();
+        
+        tileDictionary = new ColorTilebaseDictionary();
+        RuleTile[] oreTiles = Resources.LoadAll<RuleTile>("Ores");
+        
+        tileDictionary.Add(Color.black, null);
+        foreach (var tile in oreTiles)
+        {
+            tileDictionary.Add(tile.color, tile);
+        }
+
+        tiles = tileDictionary.Values.ToArray();
     }
 
     void Start()
@@ -72,7 +81,7 @@ public class ChunkGenerator : MonoBehaviour
         [WriteOnly] public NativeArray<int> tiles;
         [WriteOnly] public NativeArray<int2> pos;
 
-        [ReadOnly] public int colorsLength;
+        [ReadOnly] public NativeArray<Color> oreColors;
         [ReadOnly] public int2 mapSize;
         [ReadOnly] public int2 chunkSize;
         [ReadOnly] public int2 chunkPos;
@@ -90,26 +99,22 @@ public class ChunkGenerator : MonoBehaviour
             
             int coordIndex = coord.x + coord.y * mapSize.x; 
 
-            if (colorsLength <= coordIndex)
+            if (colors.Length <= coordIndex)
                 return;
                 
             Color color = colors[coordIndex];
-
-            const float threshold = 0.3f;
-
-            if (color.r > threshold && color.g > threshold && color.b > threshold)
-                tiles[index] = 1;
-            else if (color.r > threshold && color.g > threshold)
-                tiles[index] = 5;
-            else if (color.r > threshold)
-                tiles[index] = 2;
-            else if (color.g > threshold)
-                tiles[index] = 3;
-            else if (color.b > threshold)
-                tiles[index] = 4;
-            else
-                tiles[index] = 0;
+            int colorIndex = 0;
             
+            for (int i = 0; i < oreColors.Length; i++)
+            {
+                if(color != oreColors[i])
+                    continue;
+
+                colorIndex = i;
+                break;
+            }
+            
+            tiles[index] = colorIndex;
             pos[index] = coord;
         }
     }
@@ -125,6 +130,7 @@ public class ChunkGenerator : MonoBehaviour
         NativeArray<Color> colors = new NativeArray<Color>(mapArray, Allocator.TempJob);
         NativeArray<int> tileIndexes = new NativeArray<int>(arraySize, Allocator.TempJob);
         NativeArray<int2> tilePositions = new NativeArray<int2>(arraySize, Allocator.TempJob);
+        NativeArray<Color> oreColors = new NativeArray<Color>(tileDictionary.Keys.ToArray(), Allocator.TempJob);
         var tileBlockJob = new TileBlockJob()
         {
             colors = colors,
@@ -133,7 +139,7 @@ public class ChunkGenerator : MonoBehaviour
             mapSize = new int2(mapSize.x, mapSize.y),
             chunkSize = new int2(chunkSize.x, chunkSize.y),
             chunkPos = new int2(lastChunkPosition.x, lastChunkPosition.y),
-            colorsLength = colors.Length
+            oreColors = oreColors
         };
 
         jobHandle = tileBlockJob.Schedule(arraySize, 64);
@@ -141,26 +147,12 @@ public class ChunkGenerator : MonoBehaviour
         
         for (int i = 0; i < arraySize; i++)
         {
-            TileBase tile;
-            switch (tileIndexes[i])
+            if (tileIndexes[i] == -1)
             {
-                case 0: tile = null;
-                    break;
-                case 1: tile = whiteTile;
-                    break;
-                case 2: tile = redTile;
-                    break;
-                case 3: tile = greenTile;
-                    break;
-                case 4: tile = blueTile;
-                    break;
-                case 5: tile = yellowTile;
-                    break;
-                default: tile = null;
-                    break;
+                Debug.LogError($"{nameof(tileIndexes)}[{i}] is -1");
+                return;
             }
-            
-            tileBases[i] = tile;
+            tileBases[i] = tiles[tileIndexes[i]];
             positions[i] = new Vector3Int(tilePositions[i].x, tilePositions[i].y, 0);
         }
 
@@ -168,6 +160,7 @@ public class ChunkGenerator : MonoBehaviour
         colors.Dispose();
         tileIndexes.Dispose();
         tilePositions.Dispose();
+        oreColors.Dispose();
     }
 
     async void ProcessTileQueue()

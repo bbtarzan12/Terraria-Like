@@ -14,6 +14,12 @@ public class NodePortDictionary : SerializableDictionary<string, NodePort>{}
 [Serializable]
 public class StringNoiseValueTypeDictionary : SerializableDictionary<string, Noise.NoiseValueType>{}
 
+[Serializable]
+public class StringColorDictionary : SerializableDictionary<string, Color>{}
+
+[Serializable]
+public class ColorTilebaseDictionary : SerializableDictionary<Color, RuleTile> {}
+
 public abstract class SerializableDictionaryBase<TKey, TValue, TValueStorage> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
 	[SerializeField]
