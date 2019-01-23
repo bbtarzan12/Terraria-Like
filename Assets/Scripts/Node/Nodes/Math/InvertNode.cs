@@ -18,6 +18,7 @@ namespace XNode.Noise.Math
 
         public override Texture2D GetTexture()
         {
+            shader = Shader.Find("Noise/Invert");
             Material noiseMaterial = new Material(shader);
             noiseMaterial.SetTexture("_Texture", ((NoiseNode)GetPort(nameof(input)).Connection.node).GetTexture());
             return TextureMaker.Generate(GetGraph.mapSize, noiseMaterial);

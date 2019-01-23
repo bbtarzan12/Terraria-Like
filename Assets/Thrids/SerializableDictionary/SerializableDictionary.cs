@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using XNode;
 
 [Serializable]
@@ -19,6 +20,12 @@ public class StringColorDictionary : SerializableDictionary<string, Color>{}
 
 [Serializable]
 public class ColorTilebaseDictionary : SerializableDictionary<Color, RuleTile> {}
+
+[Serializable]
+public class StringTilebaseDictionary : SerializableDictionary<string, TileBase> {}
+
+[Serializable]
+public class StringIntDictionary : SerializableDictionary<string, int> {}
 
 public abstract class SerializableDictionaryBase<TKey, TValue, TValueStorage> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
 {

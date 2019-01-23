@@ -2600,7 +2600,7 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   output: {fileID: 0}
-  color: {r: 0.6392157, g: 0.41176474, b: 0.3803922, a: 0}
+  color: {r: 0.6392157, g: 0.41176474, b: 0.3803922, a: 1}
   oreIndex: 7
 --- !u!114 &114524890948547002
 MonoBehaviour:

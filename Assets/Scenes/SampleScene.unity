@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4895ce76d913f4fa03d7b5fc1edcd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 50
 --- !u!1 &1582282319
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,13 +375,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ff369996d014c41b87022807a8b736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chunkSize: {x: 64, y: 64}
-  chunkIteration: 4
+  chunkSize: {x: 48, y: 32}
+  chunkIteration: 8
   playerCamera: {fileID: 1374460175}
   tileDictionary:
     m_keys: []
     m_values: []
   graph: {fileID: 11400000, guid: 04bae93ece6416a4a964d31cc777d027, type: 2}
+  numProcessTileJobSegment: 32
+  numProcessTileQueueSegment: 32
 --- !u!1 &1788948896
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ namespace XNode.Noise.Procedural
 
 		public override Texture2D GetTexture()
 		{
+			shader = Shader.Find("Noise/Terrain");
 			Material noiseMaterial = new Material(shader);
 			noiseMaterial.SetFloat("_X", x);
 			noiseMaterial.SetFloat("_Height", height);

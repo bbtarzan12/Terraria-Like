@@ -13,12 +13,13 @@ namespace XNode.Noise.Math
 
         protected override void Init()
         {
-            base.Init(); 
             shader = Shader.Find("Noise/Step");
+            base.Init(); 
         }
 
         public override Texture2D GetTexture()
         {
+            shader = Shader.Find("Noise/Step");
             Material noiseMaterial = new Material(shader);
             noiseMaterial.SetTexture("_Texture", ((NoiseNode)GetPort(nameof(input)).Connection.node).GetTexture());
             noiseMaterial.SetFloat("_Threshold", threshold);

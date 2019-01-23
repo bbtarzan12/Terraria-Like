@@ -25,6 +25,8 @@ namespace XNode.Noise
             Update();
             base.Init();
         }
+
+        public void ForceInit() => Init();
         
         public override void OnRemoveConnection(NodePort port)
         {

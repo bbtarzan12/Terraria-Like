@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\OptIn\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\OptIn\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Terraria-Like.-805493391.00" t="ExcludeRecursive" />
-    <e p="C:\Users\OptIn\Documents\Terraria-Like" t="IncludeRecursive">
+    <e p="C:\Users\bbtar\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\bbtar\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Terraria-Like.836887934.00" t="ExcludeRecursive" />
+    <e p="C:\Users\bbtar\Documents\Terraria-Like" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="export.txt" t="Include" />
+        <e p="Resources" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="Maths" t="Include">
+              <e p="Flip.shader" t="Include" />
+              <e p="Invert.shader" t="Include" />
+              <e p="Mix.shader" t="Include" />
+              <e p="Step.shader" t="Include" />
+            </e>
+            <e p="Noises" t="Include">
+              <e p="Perlin.shader" t="Include" />
+              <e p="PerlinNoise.hlsl" t="Include" />
+              <e p="RidgedMulti.hlsl" t="Include" />
+              <e p="RidgedMulti.shader" t="Include" />
+              <e p="Simplex.shader" t="Include" />
+              <e p="SimplexNoise.hlsl" t="Include" />
+              <e p="Terrain.shader" t="Include" />
+            </e>
+            <e p="PostProcessing" t="Include">
+              <e p="Denoise.shader" t="Include" />
+            </e>
+            <e p="Shapes" t="Include">
+              <e p="Gradient.shader" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="ChunkGenerator.cs" t="Include" />
           <e p="MapGenerator.cs" t="Include" />
@@ -71,34 +96,12 @@
                   <e p="RuleTileEditor.cs" t="Include" />
                 </e>
                 <e p="RuleTile.cs" t="Include" />
+                <e p="RuleTileHelper.cs" t="Include" />
               </e>
               <e p="ScriptTemplates" t="Include">
                 <e p="NewCustomRuleTile.cs.txt" t="Include" />
               </e>
             </e>
-          </e>
-        </e>
-        <e p="Shaders" t="Include">
-          <e p="Maths" t="Include">
-            <e p="Flip.shader" t="Include" />
-            <e p="Invert.shader" t="Include" />
-            <e p="Mix.shader" t="Include" />
-            <e p="Step.shader" t="Include" />
-          </e>
-          <e p="Noises" t="Include">
-            <e p="Perlin.shader" t="Include" />
-            <e p="PerlinNoise.hlsl" t="Include" />
-            <e p="RidgedMulti.hlsl" t="Include" />
-            <e p="RidgedMulti.shader" t="Include" />
-            <e p="Simplex.shader" t="Include" />
-            <e p="SimplexNoise.hlsl" t="Include" />
-            <e p="Terrain.shader" t="Include" />
-          </e>
-          <e p="PostProcessing" t="Include">
-            <e p="Denoise.shader" t="Include" />
-          </e>
-          <e p="Shapes" t="Include">
-            <e p="Gradient.shader" t="Include" />
           </e>
         </e>
         <e p="Thrids" t="Include">

@@ -20,6 +20,7 @@ namespace XNode.Noise.Math
 
         public override Texture2D GetTexture()
         {
+            shader = Shader.Find("Noise/Flip");
             Material noiseMaterial = new Material(shader);
             noiseMaterial.SetTexture("_Texture", ((NoiseNode)GetPort(nameof(input)).Connection.node).GetTexture());
             noiseMaterial.SetInt("_X", Convert.ToInt32(FlipX));

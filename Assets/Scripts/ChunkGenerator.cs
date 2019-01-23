@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using TMPro;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
@@ -34,8 +32,13 @@ public class ChunkGenerator : MonoBehaviour
     TileBase[] tileBases;
     Vector3Int[] positions;
     Queue<TileProcessingQueueData> tileProcessingQueue;
-    Queue<JobDataProcessingQueueData> jobDataProcessingQueue;
     List<Vector2Int> visitedChunkPosition;
+
+    NativeArray<Color> colors;
+    NativeArray<Color> oreColors;
+
+    [SerializeField] int numProcessTileJobSegment;
+    [SerializeField] int numProcessTileQueueSegment;
 
     struct TileProcessingQueueData
     {
@@ -43,20 +46,12 @@ public class ChunkGenerator : MonoBehaviour
         public TileBase[] tiles;
         public Vector3Int[] positions;
     }
-
-    struct JobDataProcessingQueueData
-    {
-        public int length;
-        public int[] indexes;
-        public int2[] positions;
-    }
     
     void Awake()
     {
         tilemap = GetComponent<Tilemap>();
         playerTransform = playerCamera.transform;
         tileProcessingQueue = new Queue<TileProcessingQueueData>();
-        jobDataProcessingQueue = new Queue<JobDataProcessingQueueData>();
         
         tileDictionary = new ColorTilebaseDictionary();
         RuleTile[] oreTiles = Resources.LoadAll<RuleTile>("Ores");
@@ -79,10 +74,18 @@ public class ChunkGenerator : MonoBehaviour
         arraySize = chunkIteration * chunkIteration * chunkSize.x * chunkSize.y;
         tileBases = new TileBase[arraySize];
         positions = new Vector3Int[arraySize];
+        
+        colors = new NativeArray<Color>(mapArray, Allocator.Persistent);
+        oreColors = new NativeArray<Color>(tileDictionary.Keys.ToArray(), Allocator.Persistent);
+        
+        StartCoroutine(nameof(ProcessTileJob));
+        StartCoroutine(nameof(ProcessTileQueue));
+    }
 
-        ProcessTileJob();
-        ProcessTileQueue();
-        ProcessJobDataQueue();
+    void OnDestroy()
+    {
+        colors.Dispose();
+        oreColors.Dispose();
     }
 
     struct TileBlockJob : IJobParallelFor
@@ -99,7 +102,7 @@ public class ChunkGenerator : MonoBehaviour
 
         public void Execute(int index)
         {
-            int2 indexCoord = new int2(index % (chunkIteration * chunkSize.x), index / (chunkIteration * chunkSize.y));
+            int2 indexCoord = new int2(index % (chunkIteration * chunkSize.x), index / (chunkIteration * chunkSize.x));
             indexCoord.x -= chunkIteration * chunkSize.x / 2;
             indexCoord.y -= chunkIteration * chunkSize.y / 2;
             
@@ -130,106 +133,85 @@ public class ChunkGenerator : MonoBehaviour
         }
     }
 
-
-    async void UpdateTileQueue()
+    IEnumerator ProcessTileJob()
     {
-        if (chunkPosition == lastChunkPosition)
-            return;
-
-        if (visitedChunkPosition.Contains(chunkPosition))
-            return;
+        int[] indexesBuffer = new int[arraySize];
+        int2[] positionBuffer = new int2[arraySize];
         
-        lastChunkPosition = chunkPosition;
-        
-        NativeArray<Color> colors = new NativeArray<Color>(mapArray, Allocator.TempJob);
-        NativeArray<int> tileIndexes = new NativeArray<int>(arraySize, Allocator.TempJob);
-        NativeArray<int2> tilePositions = new NativeArray<int2>(arraySize, Allocator.TempJob);
-        NativeArray<Color> oreColors = new NativeArray<Color>(tileDictionary.Keys.ToArray(), Allocator.TempJob);
-        var tileBlockJob = new TileBlockJob()
+        while (true)
         {
-            colors = colors,
-            tiles = tileIndexes,
-            pos = tilePositions,
-            mapSize = new int2(mapSize.x, mapSize.y),
-            chunkIteration = chunkIteration,
-            chunkSize = new int2(chunkSize.x, chunkSize.y),
-            chunkPos = new int2(lastChunkPosition.x, lastChunkPosition.y),
-            oreColors = oreColors
-        };
+            yield return null;
+            if (chunkPosition == lastChunkPosition)
+                continue;
 
-        jobHandle = tileBlockJob.Schedule(arraySize, 32);
-        
-        if (!jobHandle.IsCompleted)
-            Task.Yield();
-        
-        jobHandle.Complete();
+            if (visitedChunkPosition.Contains(chunkPosition))
+                continue;
+
+            lastChunkPosition = chunkPosition;    
+            
+            NativeArray<int> tileIndexes = new NativeArray<int>(arraySize, Allocator.TempJob);
+            NativeArray<int2> tilePositions = new NativeArray<int2>(arraySize, Allocator.TempJob);
                 
-        visitedChunkPosition.Add(chunkPosition);
+            var tileBlockJob = new TileBlockJob()
+            {
+                colors = colors,
+                tiles = tileIndexes,
+                pos = tilePositions,
+                mapSize = new int2(mapSize.x, mapSize.y),
+                chunkIteration = chunkIteration,
+                chunkSize = new int2(chunkSize.x, chunkSize.y),
+                chunkPos = new int2(lastChunkPosition.x, lastChunkPosition.y),
+                oreColors = oreColors
+            };
+   
+            jobHandle = tileBlockJob.Schedule(arraySize, 32);
 
-        var jobProcessingData = new JobDataProcessingQueueData();
-        jobProcessingData.indexes = new int[tileIndexes.Length];
-        jobProcessingData.positions = new int2[tilePositions.Length];
-        
-        jobProcessingData.length = arraySize;
-        tileIndexes.CopyTo(jobProcessingData.indexes);
-        tilePositions.CopyTo(jobProcessingData.positions);
-        
-        jobDataProcessingQueue.Enqueue(jobProcessingData);
-        
-        colors.Dispose();
-        tileIndexes.Dispose();
-        tilePositions.Dispose();
-        oreColors.Dispose();
-    }
-
-    async void ProcessTileJob()
-    {
-        while (true)
-        {
-            UpdateTileQueue();
-            await Task.Yield();
-        }
-    }
-
-    async void ProcessJobDataQueue()
-    {
-        while (true)
-        {
-            while (jobDataProcessingQueue.Count == 0)
-                await Task.Yield();
-
-            JobDataProcessingQueueData data = jobDataProcessingQueue.Dequeue();
-
-            int segment = data.length / 64;
+            jobHandle.Complete();
+            
+            visitedChunkPosition.Add(chunkPosition);
+            
+            tileIndexes.CopyTo(indexesBuffer);
+            tilePositions.CopyTo(positionBuffer);
+            
+            int segment = arraySize / numProcessTileJobSegment;
             for (int i = 0; i < arraySize; i++)
             {
                 if (i % segment == 0)
-                    await Task.Yield();
-                tileBases[i] = tiles[data.indexes[i]];
-                positions[i] = new Vector3Int(data.positions[i].x, data.positions[i].y, 0);
+                    yield return null;
+                tileBases[i] = tiles[indexesBuffer[i]];
+                positions[i] = new Vector3Int(positionBuffer[i].x, positionBuffer[i].y, 0);
             }
             
             tileProcessingQueue.Enqueue(new TileProcessingQueueData {length = arraySize, tiles = tileBases, positions = positions});
+            
+            tileIndexes.Dispose();
+            tilePositions.Dispose();
         }
     }
 
-    async void ProcessTileQueue()
+    IEnumerator ProcessTileQueue()
     {
+        Vector3Int[] positionSegmentBuffer = new Vector3Int[arraySize / numProcessTileQueueSegment];
+        TileBase[] tileBasesSegementBuffer = new TileBase[arraySize / numProcessTileQueueSegment];
+        
         while (true)
         {
             while(tileProcessingQueue.Count == 0)
-                await Task.Yield();
+                yield return null;
 
             TileProcessingQueueData data = tileProcessingQueue.Dequeue();
 
-            int segment = data.length / 64;
-            for (int i = 0; i < 64; i++)
+            int segment = data.length / numProcessTileQueueSegment;
+            for (int i = 0; i < numProcessTileQueueSegment; i++)
             {
                 ArraySegment<Vector3Int> positionSegment = new ArraySegment<Vector3Int>(data.positions, i * segment, segment);
                 ArraySegment<TileBase> tilesSegment = new ArraySegment<TileBase>(data.tiles, i * segment, segment);
-                tilemap.SetTiles(positionSegment.ToArray(), tilesSegment.ToArray());
-                await Task.Yield();
+                Array.Copy(data.positions, positionSegment.Offset, positionSegmentBuffer, 0, positionSegment.Count);
+                Array.Copy(data.tiles, tilesSegment.Offset, tileBasesSegementBuffer, 0, tilesSegment.Count);
+                tilemap.SetTiles(positionSegmentBuffer, tileBasesSegementBuffer);
+                yield return null;
             }
+            
         }
     }
 }

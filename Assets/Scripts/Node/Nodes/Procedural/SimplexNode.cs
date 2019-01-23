@@ -20,6 +20,7 @@ namespace XNode.Noise.Procedural
 
         public override Texture2D GetTexture()
         {
+            shader = Shader.Find("Noise/Simplex");
             Material noiseMaterial = new Material(shader);
             noiseMaterial.SetFloat("_X", offset.x);
             noiseMaterial.SetFloat("_Y", offset.y);

@@ -25,6 +25,7 @@ namespace XNode.Noise.Simple
 
 		public override Texture2D GetTexture()
 		{
+			shader = Shader.Find("Noise/Gradient");
 			Material noiseMaterial = new Material(shader);
 			noiseMaterial.SetVector("_Pos", new Vector4(start.x, start.y, end.x, end.y));
 			noiseMaterial.SetInt("_Mode", (int)mode);

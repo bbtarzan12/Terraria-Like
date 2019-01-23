@@ -22,6 +22,7 @@ namespace XNode.Noise.Blend
 
         public override Texture2D GetTexture()
         {
+            shader = Shader.Find("Noise/Mix");
             Material noiseMaterial = new Material(shader);
             noiseMaterial.SetTexture("_Texture1", ((NoiseNode)GetPort(nameof(input1)).Connection.node).GetTexture());
             noiseMaterial.SetTexture("_Texture2", ((NoiseNode)GetPort(nameof(input2)).Connection.node).GetTexture());
