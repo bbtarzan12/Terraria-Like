@@ -34,7 +34,10 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="ChunkGenerator.cs" t="Include" />
+          <e p="Chunk" t="Include">
+            <e p="TileChunk.cs" t="Include" />
+            <e p="TileChunkUpdator.cs" t="Include" />
+          </e>
           <e p="MapGenerator.cs" t="Include" />
           <e p="Node" t="Include">
             <e p="Editor" t="Include">

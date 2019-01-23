@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1480d4ab-6ac3-4588-b7a1-a0c1afa694af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk/TileChunk.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk/TileChunk.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Terraria-Like/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terraria-Like/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Terraria-Like/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terraria-Like/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,29 +18,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Chunk/TileChunkUpdator.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1058">
-              <caret line="193" column="38" selection-start-line="193" selection-start-column="38" selection-end-line="193" selection-end-column="38" />
+            <state relative-caret-position="842">
+              <caret line="199" column="13" lean-forward="true" selection-start-line="199" selection-start-column="13" selection-end-line="199" selection-end-column="13" />
               <folding>
-                <marker date="1548235947379" expanded="false" signature="6:226" ph="..." />
-                <marker date="1548235947379" expanded="true" signature="271:6960" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="1143:1694" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="1469:1583" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="1712:2217" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="2239:2335" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="2360:3017" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="2530:3011" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="2643:3001" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="3080:4395" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="3474:4389" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="4134:4290" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="4434:6958" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="4573:6952" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="4869:6929" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="4990:6915" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="5733:6045" ph="{...}" />
-                <marker date="1548235947379" expanded="true" signature="6501:6709" ph="{...}" />
+                <marker date="1548237986509" expanded="false" signature="6:226" ph="..." />
+                <marker date="1548237986509" expanded="true" signature="273:7671" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="1136:1678" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="1462:1576" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="1696:2201" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="2223:2319" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="2344:3001" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="2514:2995" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="2627:2985" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="3064:4379" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="3458:4373" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="4118:4274" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="4418:7669" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="4557:7663" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="4853:7085" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="4974:7071" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="5768:6080" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="6536:6744" ph="{...}" />
+                <marker date="1548237986509" expanded="true" signature="7397:7640" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Chunk/TileChunk.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+              <folding>
+                <marker date="1548237663960" expanded="false" signature="7:61" ph="..." />
+                <marker date="1548237663960" expanded="true" signature="85:647" ph="{...}" />
+                <marker date="1548237663960" expanded="true" signature="257:433" ph="{...}" />
+                <marker date="1548237663960" expanded="true" signature="457:514" ph="{...}" />
+                <marker date="1548237663960" expanded="true" signature="543:645" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -49,7 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tilemap.set</find>
       <find>gettileani</find>
       <find>startup</find>
       <find>rulematches</find>
@@ -79,6 +96,7 @@
       <find>32</find>
       <find>%</find>
       <find>overlay</find>
+      <find>generator</find>
     </findStrings>
     <replaceStrings>
       <replace>Vector3</replace>
@@ -175,7 +193,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.0.9-preview.11/Unity.Collections/NativeQueue.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.jobs@0.0.7-preview.6/Unity.Jobs.Tests/Unity.Jobs.Tests.asmdef" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorGUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chunk/TileChunk.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestCameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorReflection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Procedural/PerlinNode.cs" root0="FORCE_HIGHLIGHTING" />
@@ -183,6 +201,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/70/dfe76b04/BoundsInt.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.0.9-preview.11/Unity.Collections/NativeArrayExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Shaders/Noises/SimplexNoise.hlsl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chunk/TileChunkUpdator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/NoiseNodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/GraphyDebugger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Shaders/Noises/RidgedMulti.hlsl" root0="FORCE_HIGHLIGHTING" />
@@ -193,13 +212,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Blend/MixNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_ExtensionMethods.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Simple/GradientNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Shaders/Noises/Simplex.shader" />
-        <option value="$PROJECT_DIR$/Assets/Shaders/Noises/RidgedMulti.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Old/TerrainNode.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Old/GradientNode.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Procedural/ColorNode.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Shapes/BoxGradient.shader" />
@@ -248,6 +265,9 @@
         <option value="$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/GraphyDebugger.cs" />
         <option value="$PROJECT_DIR$/Assets/test.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Chunk/ChunkUpdator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Chunk/TileChunk.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Chunk/TileChunkUpdator.cs" />
       </list>
     </option>
   </component>
@@ -270,7 +290,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
       <pane id="UnityExplorer">
         <subPane>
           <expand>
@@ -287,14 +309,7 @@
               <item name="Project" type="e068e287:UnityExplorerRootNode" />
               <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
               <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-              <item name="Node" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-              <item name="Node" type="1045f7f1:UnityExplorerNode" />
-              <item name="Nodes" type="1045f7f1:UnityExplorerNode" />
+              <item name="Chunk" type="1045f7f1:UnityExplorerNode" />
             </path>
             <path>
               <item name="Project" type="e068e287:UnityExplorerRootNode" />
@@ -316,9 +331,7 @@
         </subPane>
         <option name="show-hidden-items" value="false" />
       </pane>
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
+      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
     </panes>
   </component>
@@ -404,12 +417,13 @@
       <workItem from="1548161201391" duration="4980000" />
       <workItem from="1548212899098" duration="13779000" />
       <workItem from="1548230954143" duration="3660000" />
-      <workItem from="1548234785579" duration="1158000" />
+      <workItem from="1548234785579" duration="2707000" />
+      <workItem from="1548237528911" duration="458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232525000" />
+    <option name="totallyTimeSpent" value="234532000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -490,22 +504,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/LD35_Metaball_shader/Assets/Scripts/Pure/SPHManager.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Noise/Editor/NoiseEditor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="842">
-          <caret line="129" column="24" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Noise/NoiseGenerator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/13/70268f47/Dictionary`2.cs" />
     <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_ExtensionMethods.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -1429,13 +1427,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/test.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="374" column="37" selection-start-line="374" selection-start-column="37" selection-end-line="374" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Chunk/ChunkUpdator.cs" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/70/dfe76b04/BoundsInt.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
-          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+          <caret line="322" column="40" selection-start-line="322" selection-start-column="40" selection-end-line="322" selection-end-column="40" />
           <folding>
             <marker date="1548231360198" expanded="true" signature="0:333" ph="/* Decompiled with JetBrains decompiler ... */" />
-            <marker date="1548231360198" expanded="false" signature="341:437" ph="..." />
             <marker date="1548231360198" expanded="true" signature="460:10547" ph="{...}" />
             <marker date="1548231360198" expanded="true" signature="465:585" ph="///   &lt;para&gt;Represents an axis aligned bounding box with all values as integers.&lt;/para&gt; ... " />
             <marker date="1548231360198" expanded="true" signature="656:10545" ph="{...}" />
@@ -1533,36 +1540,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/test.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Chunk/TileChunk.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state relative-caret-position="486">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+          <folding>
+            <marker date="1548237663960" expanded="false" signature="7:61" ph="..." />
+            <marker date="1548237663960" expanded="true" signature="85:647" ph="{...}" />
+            <marker date="1548237663960" expanded="true" signature="257:433" ph="{...}" />
+            <marker date="1548237663960" expanded="true" signature="457:514" ph="{...}" />
+            <marker date="1548237663960" expanded="true" signature="543:645" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Chunk/TileChunkUpdator.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="193" column="38" selection-start-line="193" selection-start-column="38" selection-end-line="193" selection-end-column="38" />
+        <state relative-caret-position="842">
+          <caret line="199" column="13" lean-forward="true" selection-start-line="199" selection-start-column="13" selection-end-line="199" selection-end-column="13" />
           <folding>
-            <marker date="1548235947379" expanded="false" signature="6:226" ph="..." />
-            <marker date="1548235947379" expanded="true" signature="271:6960" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="1143:1694" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="1469:1583" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="1712:2217" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="2239:2335" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="2360:3017" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="2530:3011" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="2643:3001" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="3080:4395" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="3474:4389" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="4134:4290" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="4434:6958" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="4573:6952" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="4869:6929" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="4990:6915" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="5733:6045" ph="{...}" />
-            <marker date="1548235947379" expanded="true" signature="6501:6709" ph="{...}" />
+            <marker date="1548237986509" expanded="false" signature="6:226" ph="..." />
+            <marker date="1548237986509" expanded="true" signature="273:7671" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="1136:1678" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="1462:1576" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="1696:2201" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="2223:2319" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="2344:3001" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="2514:2995" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="2627:2985" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="3064:4379" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="3458:4373" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="4118:4274" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="4418:7669" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="4557:7663" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="4853:7085" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="4974:7071" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="5768:6080" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="6536:6744" ph="{...}" />
+            <marker date="1548237986509" expanded="true" signature="7397:7640" ph="{...}" />
           </folding>
         </state>
       </provider>

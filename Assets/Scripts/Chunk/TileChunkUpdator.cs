@@ -9,7 +9,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class ChunkGenerator : MonoBehaviour
+public class TileChunkUpdator : MonoBehaviour
 {
     [SerializeField] Vector2Int chunkSize;
     [SerializeField] int chunkIteration;
@@ -32,7 +32,7 @@ public class ChunkGenerator : MonoBehaviour
     int arraySize;
     TileBase[] tileBases;
     Vector3Int[] positions;
-    List<Vector2Int> visitedChunkPosition;
+    List<TileChunk> visitedChunk;
 
     NativeArray<Color> colors;
     NativeArray<Color> oreColors;
@@ -52,7 +52,7 @@ public class ChunkGenerator : MonoBehaviour
         }
 
         tiles = tileDictionary.Values.ToArray();
-        visitedChunkPosition = new List<Vector2Int>();
+        visitedChunk = new List<TileChunk>();
     }
 
     void Start()
@@ -154,14 +154,15 @@ public class ChunkGenerator : MonoBehaviour
                 for (int y = chunkPosition.y - chunkIteration; y <= chunkPosition.y + chunkIteration; y++)
                 {
                     Vector2Int currentChunkPosition = new Vector2Int(x, y) * chunkSize;
-                    
-                    if (visitedChunkPosition.Contains(currentChunkPosition))
+                    Vector3Int currentBoundPosition = new Vector3Int(currentChunkPosition.x, currentChunkPosition.y, 0);
+
+                    if (visitedChunk.Exists(c => c.bound.position == currentBoundPosition))
                         continue;
-                    
+
                     NativeArray<int> tileIndexes = new NativeArray<int>(arraySize, Allocator.TempJob);
                     NativeArray<int2> tilePositions = new NativeArray<int2>(arraySize, Allocator.TempJob);
                     
-                    BoundsInt currentBound = new BoundsInt(new Vector3Int(currentChunkPosition.x, currentChunkPosition.y, 0) , new Vector3Int(chunkSize.x, chunkSize.y, 1));
+                    BoundsInt currentBound = new BoundsInt(currentBoundPosition , new Vector3Int(chunkSize.x, chunkSize.y, 1));
 
                     var chunkBlockJob = new ChunkBlockJob
                     {
@@ -188,11 +189,27 @@ public class ChunkGenerator : MonoBehaviour
                         tileBases[i] = tiles[indexesBuffer[i]];
                         positions[i] = new Vector3Int(positionBuffer[i].x, positionBuffer[i].y, 0);
                     }
-            
-                    visitedChunkPosition.Add(currentChunkPosition);
-                    tilemap.SetTilesBlock(currentBound, tileBases);
+
+                    TileChunk tileChunk = new TileChunk(currentBound, tileBases, tilemap);
+                    tileChunk.Draw();
+                    
+                    visitedChunk.Add(tileChunk);
+                    //tilemap.SetTilesBlock(currentBound, tileBases);
                     yield return null;
                 }
+            }
+            
+            BoundsInt bigChunkBound = new BoundsInt((chunkPosition.x - chunkIteration) * chunkSize.x, (chunkPosition.y - chunkIteration) * chunkSize.y, 0, chunkSize.x * chunkIteration * 2 + 1, chunkSize.y * chunkIteration * 2 + 1, 1);
+
+
+            for (int i = visitedChunk.Count - 1; i >= 0; i--)
+            {
+                var chunk = visitedChunk[i];
+                if (bigChunkBound.Contains(chunk.bound.position))
+                    continue;
+
+                chunk.Erase();
+                visitedChunk.RemoveAt(i);
             }
             
         }
