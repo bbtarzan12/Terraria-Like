@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1480d4ab-6ac3-4588-b7a1-a0c1afa694af" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Terraria-Like/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terraria-Like/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Terraria-Like/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terraria-Like/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Node/Generator.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Node/Generator.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,65 +14,32 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1155776039">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="cs" value="2304" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="C#" value="2304" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="cs" value="61" />
-          <entry key="guiskin" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="C#" value="61" />
-          <entry key="PLAIN_TEXT" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="769">
-              <caret line="186" column="12" lean-forward="true" selection-start-line="186" selection-start-column="12" selection-end-line="186" selection-end-column="12" />
+            <state relative-caret-position="1058">
+              <caret line="193" column="38" selection-start-line="193" selection-start-column="38" selection-end-line="193" selection-end-column="38" />
               <folding>
-                <marker date="1548228521470" expanded="false" signature="6:207" ph="..." />
-                <marker date="1548228521470" expanded="true" signature="252:7595" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="1301:1412" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="1434:2053" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="1828:1942" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="2071:2659" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="2681:2748" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="2791:4341" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="3255:4335" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="4085:4241" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="4375:6374" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="4514:6368" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="5061:5471" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="5959:6212" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="6410:7593" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="6646:7587" ph="{...}" />
-                <marker date="1548228521470" expanded="true" signature="6950:7564" ph="{...}" />
+                <marker date="1548235947379" expanded="false" signature="6:226" ph="..." />
+                <marker date="1548235947379" expanded="true" signature="271:6960" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="1143:1694" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="1469:1583" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="1712:2217" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="2239:2335" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="2360:3017" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="2530:3011" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="2643:3001" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="3080:4395" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="3474:4389" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="4134:4290" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="4434:6958" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="4573:6952" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="4869:6929" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="4990:6915" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="5733:6045" ph="{...}" />
+                <marker date="1548235947379" expanded="true" signature="6501:6709" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -139,94 +108,95 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/PostProcessing/DenoiseNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Procedural/PerlinNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Procedural/RidgedMultiNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/NodeDataCache.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Node.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/33/05ca3ebf/Texture2D.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/NodePort.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.0.9-preview.11/Unity.Collections/NativeQueue.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/NodeGraph.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tiles/Rule Tile/Scripts/Editor/RuleTileEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tiles/Rule Tile/Scripts/RuleTile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tiles/Rule Tile/Scripts/Editor/CustomRuleTileMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/5e/c091a7a2/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Advanced/G_AdvancedData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/04/e7a1c59a/Allocator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.0.9-preview.11/Unity.Collections/NativeList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Noise/Editor/NoiseEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Editor/GraphyDebuggerEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.0.9-preview.11/Unity.Collections/NativeArrayExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Graph/G_Graph.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Noise/Noise.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/OutNodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Noise/INoise.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/60/28ba7369/Task.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89642074-5275-4636-8FDC-40851A8BA7C9/58/bdd6de92/TileBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@0.0.12-preview.19/Unity.Mathematics/int2.gen.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/PreviewNodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Noise/NoiseGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Simple/OreColorNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SimplexNoise.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tiles/Rule Tile/Scripts/RuleTileHelper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/1c/b4cb97bc/Shader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Util/PreviewNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Simple/ColorNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Ram/G_RamManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.jobs@0.0.7-preview.6/Unity.Jobs/Unity.Jobs.asmdef" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/OreColorNodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Hub/Editor/2018.3.0f2/Editor/Data/CGIncludes/UnityCG.cginc" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapGenerator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Simple/GradientNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89642074-5275-4636-8FDC-40851A8BA7C9/5e/0a12a33b/Tilemap.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.jobs@0.0.7-preview.6/Unity.Jobs.Tests/Unity.Jobs.Tests.asmdef" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/8a/8664aa2e/IJobParallelFor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09BA7DB3-5C55-4EA3-A09E-B6E420FE3A71/ab/75c1559f/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Math/FlipNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/6e/ea88565c/Vector2Int.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextureMaker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Fps/G_FpsGraph.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/87/9a03aa11/Color.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_ExtensionMethods.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A40D33B-BDDE-4897-9DA1-BE54AC615C76/d5/d4485475/NativeMethodAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/1c/b4cb97bc/Shader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Procedural/SimplexNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Procedural/TerrainNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/3a/bfe6d395/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Procedural/RidgedMultiNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/PostProcessing/DenoiseNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/PreviewNodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@0.0.12-preview.19/Unity.Mathematics/int2.gen.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/OutNodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/NoiseGraphEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Graph/G_Graph.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/OreColorNodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Noise/INoise.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Editor/GraphyDebuggerEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Noise/Editor/NoiseEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Noise/NoiseGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Advanced/G_AdvancedData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tiles/Rule Tile/Scripts/RuleTile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tiles/Rule Tile/Scripts/RuleTileHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tiles/Rule Tile/Scripts/Editor/CustomRuleTileMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/5e/c091a7a2/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89642074-5275-4636-8FDC-40851A8BA7C9/58/bdd6de92/TileBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A40D33B-BDDE-4897-9DA1-BE54AC615C76/6f/3c6ca08d/FreeFunctionAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A40D33B-BDDE-4897-9DA1-BE54AC615C76/d5/d4485475/NativeMethodAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Thrids/SerializableDictionary/Editor/SerializableDictionaryPropertyDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Node.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/33/05ca3ebf/Texture2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Thrids/SerializableDictionary/SerializableDictionary.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Noise/Noise.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/NodeGraph.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/60/28ba7369/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/NodePort.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/NodeDataCache.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/8a/8664aa2e/IJobParallelFor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/df/845221ba/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2018.3.0f2/Editor/Data/CGIncludes/UnityCG.cginc" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tiles/Rule Tile/Scripts/Editor/RuleTileEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/87/9a03aa11/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89642074-5275-4636-8FDC-40851A8BA7C9/5e/0a12a33b/Tilemap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/NoiseNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/NoiseGraph.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorResources.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09BA7DB3-5C55-4EA3-A09E-B6E420FE3A71/ab/75c1559f/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Master/OutNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorUtilities.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Math/FlipNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorGUILayout.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/6e/ea88565c/Vector2Int.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Math/InvertNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Math/StepNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.jobs@0.0.7-preview.6/Unity.Jobs/Unity.Jobs.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextureMaker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/46/2215bd25/NativeArray`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SimplexNoise.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/04/e7a1c59a/Allocator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeGraphEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.0.9-preview.11/Unity.Collections/NativeQueue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.jobs@0.0.7-preview.6/Unity.Jobs.Tests/Unity.Jobs.Tests.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorGUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestCameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorReflection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Procedural/PerlinNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.0.9-preview.11/Unity.Collections/NativeList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/70/dfe76b04/BoundsInt.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.0.9-preview.11/Unity.Collections/NativeArrayExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Shaders/Noises/SimplexNoise.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/NoiseNodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/GraphyDebugger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/46/2215bd25/NativeArray`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A40D33B-BDDE-4897-9DA1-BE54AC615C76/6f/3c6ca08d/FreeFunctionAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Shaders/Noises/RidgedMulti.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Blend/MixNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Shaders/Noises/RidgedMulti.hlsl" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Master/OutNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/3a/bfe6d395/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/NoiseGraph.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestCameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Math/StepNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Shaders/Noises/SimplexNoise.hlsl" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Procedural/TerrainNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorAction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorGUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Thrids/SerializableDictionary/Editor/SerializableDictionaryPropertyDrawer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorGUILayout.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Thrids/SerializableDictionary/SerializableDictionary.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorResources.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/df/845221ba/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorReflection.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/NoiseNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Math/InvertNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeEditorUtilities.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/NoiseGraphEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/xNode/Scripts/Editor/NodeGraphEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Shaders/Noises/RidgedMulti.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89642074-5275-4636-8FDC-40851A8BA7C9/47/ce80dd35/Tilemap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Fps/G_FpsGraph.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Util/PreviewNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Blend/MixNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_ExtensionMethods.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Simple/GradientNode.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Shaders/Noises/Perlin.shader" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Noises/Simplex.shader" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Noises/RidgedMulti.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Node/Nodes/Old/TerrainNode.cs" />
@@ -276,6 +246,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tiles/Rule Tile/Scripts/RuleTileHelper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tiles/Rule Tile/Scripts/RuleTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Thrids/Tayx/Graphy - Ultimate Stats Monitor/Scripts/GraphyDebugger.cs" />
+        <option value="$PROJECT_DIR$/Assets/test.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs" />
       </list>
     </option>
@@ -285,15 +256,9 @@
       <facet id="riderModule/invalid/Default Android Facet" />
     </ignored-facets>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1374" />
-    <option name="y" value="-16" />
+    <option name="x" value="1083" />
+    <option name="y" value="-25" />
     <option name="width" value="1094" />
     <option name="height" value="1047" />
   </component>
@@ -305,10 +270,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="FileSystemExplorer" />
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
+      <pane id="AssemblyExplorer" />
       <pane id="UnityExplorer">
         <subPane>
           <expand>
@@ -354,7 +316,10 @@
         </subPane>
         <option name="show-hidden-items" value="false" />
       </pane>
-      <pane id="AssemblyExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,12 +344,14 @@
     </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="23780">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="15344">
+      <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="23780" />
+      <option name="pid" value="15344" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <method v="2" />
@@ -435,12 +402,14 @@
       <workItem from="1548139334388" duration="5871000" />
       <workItem from="1548150325146" duration="7321000" />
       <workItem from="1548161201391" duration="4980000" />
-      <workItem from="1548212899098" duration="13739000" />
+      <workItem from="1548212899098" duration="13779000" />
+      <workItem from="1548230954143" duration="3660000" />
+      <workItem from="1548234785579" duration="1158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227667000" />
+    <option name="totallyTimeSpent" value="232525000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -505,9 +474,6 @@
       </list>
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
@@ -524,21 +490,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Extensions/AssetDatabaseExtension.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Node/Editor/NoiseNodeEditor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Shaders/Maths/Mix.shader">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="788">
-          <caret line="62" column="44" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/LD35_Metaball_shader/Assets/Scripts/Pure/SPHManager.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Noise/Editor/NoiseEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
@@ -1471,28 +1422,147 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89642074-5275-4636-8FDC-40851A8BA7C9/47/ce80dd35/Tilemap.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="883" column="24" selection-start-line="883" selection-start-column="24" selection-end-line="883" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D616BE05-755D-41A0-8981-0B5C14E4DD50/70/dfe76b04/BoundsInt.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+          <folding>
+            <marker date="1548231360198" expanded="true" signature="0:333" ph="/* Decompiled with JetBrains decompiler ... */" />
+            <marker date="1548231360198" expanded="false" signature="341:437" ph="..." />
+            <marker date="1548231360198" expanded="true" signature="460:10547" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="465:585" ph="///   &lt;para&gt;Represents an axis aligned bounding box with all values as integers.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="656:10545" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="811:938" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="998:1070" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1076:1172" ph="///   &lt;para&gt;X value of the minimal point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="1189:1322" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1205:1255" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1265:1316" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1328:1424" ph="///   &lt;para&gt;Y value of the minimal point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="1441:1574" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1457:1507" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1517:1568" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1580:1676" ph="///   &lt;para&gt;Z value of the minimal point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="1693:1826" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1709:1759" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1769:1820" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1832:1919" ph="///   &lt;para&gt;The center of the bounding box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="1945:2146" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="1961:2140" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="2152:2237" ph="///   &lt;para&gt;The minimal point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="2263:2478" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="2279:2359" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="2369:2472" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="2484:2569" ph="///   &lt;para&gt;The maximal point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="2595:2810" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="2611:2691" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="2701:2804" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="2816:2903" ph="///   &lt;para&gt;The minimal x point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="2923:3181" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="2939:3034" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="3044:3175" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="3187:3274" ph="///   &lt;para&gt;The minimal y point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="3294:3552" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="3310:3405" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="3415:3546" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="3558:3645" ph="///   &lt;para&gt;The minimal z point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="3665:3923" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="3681:3776" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="3786:3917" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="3929:4016" ph="///   &lt;para&gt;The maximal x point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="4036:4230" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="4052:4147" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="4157:4224" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="4236:4323" ph="///   &lt;para&gt;The maximal y point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="4343:4537" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="4359:4454" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="4464:4531" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="4543:4630" ph="///   &lt;para&gt;The maximal z point of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="4650:4844" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="4666:4761" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="4771:4838" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="4850:4939" ph="///   &lt;para&gt;The position of the bounding box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="4970:5099" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="4986:5034" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="5044:5093" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="5105:5187" ph="///   &lt;para&gt;The total size of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="5214:5335" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="5230:5274" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="5284:5329" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="5341:5535" ph="///   &lt;para&gt;Sets the bounds to the min and max value of the box.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="5609:5681" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="5687:5870" ph="///   &lt;para&gt;Clamps the position and size of this bounding box to the given bounds.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="5918:6353" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="6359:6699" ph="///   &lt;para&gt;Is point contained in the bounding box?&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="6745:7025" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="7031:7136" ph="///   &lt;para&gt;Returns a nicely formatted string for the bounds.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="7174:7295" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="7361:7448" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="7514:7554" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="7601:7713" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="7754:7857" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="7896:7985" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="7991:8127" ph="///   &lt;para&gt;A BoundsInt.PositionCollection that contains all positions within the BoundsInt.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="8186:8293" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="8202:8287" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="8299:8434" ph="///   &lt;para&gt;An iterator that allows you to iterate over all positions within the BoundsInt.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="8523:10541" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="8709:8813" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="8821:9077" ph="///   &lt;para&gt;Returns this as an iterator that allows you to iterate over all positions within the BoundsInt.&lt;/para ... " />
+            <marker date="1548231360198" expanded="true" signature="9135:9172" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="9180:9416" ph="///   &lt;para&gt;Moves the enumerator to the next position.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="9445:9931" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="9592:9902" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="9718:9892" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="9939:10044" ph="///   &lt;para&gt;Resets this enumerator to its starting state.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="10070:10148" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="10156:10251" ph="///   &lt;para&gt;Current position of the enumerator.&lt;/para&gt; ... " />
+            <marker date="1548231360198" expanded="true" signature="10283:10363" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="10303:10355" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="10397:10485" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="10417:10477" ph="{...}" />
+            <marker date="1548231360198" expanded="true" signature="10519:10535" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/test.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/ChunkGenerator.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="186" column="12" lean-forward="true" selection-start-line="186" selection-start-column="12" selection-end-line="186" selection-end-column="12" />
+        <state relative-caret-position="1058">
+          <caret line="193" column="38" selection-start-line="193" selection-start-column="38" selection-end-line="193" selection-end-column="38" />
           <folding>
-            <marker date="1548228521470" expanded="false" signature="6:207" ph="..." />
-            <marker date="1548228521470" expanded="true" signature="252:7595" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="1301:1412" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="1434:2053" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="1828:1942" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="2071:2659" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="2681:2748" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="2791:4341" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="3255:4335" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="4085:4241" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="4375:6374" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="4514:6368" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="5061:5471" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="5959:6212" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="6410:7593" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="6646:7587" ph="{...}" />
-            <marker date="1548228521470" expanded="true" signature="6950:7564" ph="{...}" />
+            <marker date="1548235947379" expanded="false" signature="6:226" ph="..." />
+            <marker date="1548235947379" expanded="true" signature="271:6960" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="1143:1694" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="1469:1583" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="1712:2217" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="2239:2335" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="2360:3017" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="2530:3011" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="2643:3001" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="3080:4395" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="3474:4389" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="4134:4290" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="4434:6958" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="4573:6952" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="4869:6929" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="4990:6915" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="5733:6045" ph="{...}" />
+            <marker date="1548235947379" expanded="true" signature="6501:6709" ph="{...}" />
           </folding>
         </state>
       </provider>

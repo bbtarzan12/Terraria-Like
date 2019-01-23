@@ -375,15 +375,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ff369996d014c41b87022807a8b736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chunkSize: {x: 48, y: 32}
-  chunkIteration: 8
+  chunkSize: {x: 16, y: 16}
+  chunkIteration: 5
   playerCamera: {fileID: 1374460175}
   tileDictionary:
     m_keys: []
     m_values: []
   graph: {fileID: 11400000, guid: 04bae93ece6416a4a964d31cc777d027, type: 2}
-  numProcessTileJobSegment: 32
-  numProcessTileQueueSegment: 32
+  numProcessTileJobSegment: 1
+  numProcessTileQueueSegment: 1
 --- !u!1 &1788948896
 GameObject:
   m_ObjectHideFlags: 0
