@@ -173,6 +173,9 @@ public class ChunkGenerator : MonoBehaviour
             tileIndexes.CopyTo(indexesBuffer);
             tilePositions.CopyTo(positionBuffer);
             
+            tileIndexes.Dispose();
+            tilePositions.Dispose();
+            
             int segment = arraySize / numProcessTileJobSegment;
             for (int i = 0; i < arraySize; i++)
             {
@@ -183,9 +186,6 @@ public class ChunkGenerator : MonoBehaviour
             }
             
             tileProcessingQueue.Enqueue(new TileProcessingQueueData {length = arraySize, tiles = tileBases, positions = positions});
-            
-            tileIndexes.Dispose();
-            tilePositions.Dispose();
         }
     }
 

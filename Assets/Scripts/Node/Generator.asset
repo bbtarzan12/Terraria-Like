@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: Denoise Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2760, y: 520}
+  position: {x: 2488, y: 520}
   ports:
     m_keys:
     - input
@@ -192,7 +192,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  minRoomSize: 20
+  minRoomSize: 50
   denoiseType: 0
 --- !u!114 &114008650073020054
 MonoBehaviour:
@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Name: Denoise Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2344, y: 520}
+  position: {x: 2184, y: 520}
   ports:
     m_keys:
     - input
@@ -822,7 +822,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  minRoomSize: 2
+  minRoomSize: 10
   denoiseType: 1
 --- !u!114 &114102775513673268
 MonoBehaviour:
