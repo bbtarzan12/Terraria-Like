@@ -34,7 +34,11 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Base" t="Include">
+            <e p="Singleton.cs" t="Include" />
+          </e>
           <e p="Chunk" t="Include">
+            <e p="ChunkUpdator.cs" t="Include" />
             <e p="TileChunk.cs" t="Include" />
             <e p="TileChunkUpdator.cs" t="Include" />
           </e>
@@ -88,7 +92,6 @@
             <e p="Noise.cs" t="Include" />
             <e p="NoiseGenerator.cs" t="Include" />
           </e>
-          <e p="SimplexNoise.cs" t="Include" />
           <e p="TestCameraMovement.cs" t="Include" />
           <e p="TextureMaker.cs" t="Include" />
           <e p="Tiles" t="Include">
@@ -190,6 +193,8 @@
         </e>
         <e p="Tiles" t="Include">
           <e p="export.txt" t="Include" />
+          <e p="Ore_export.txt" t="Include" />
+          <e p="Wall_export.txt" t="Include" />
         </e>
         <e p="xNode" t="Include">
           <e p="Scripts" t="Include">

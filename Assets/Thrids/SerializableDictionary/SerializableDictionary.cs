@@ -27,6 +27,9 @@ public class StringTilebaseDictionary : SerializableDictionary<string, TileBase>
 [Serializable]
 public class StringIntDictionary : SerializableDictionary<string, int> {}
 
+[Serializable]
+public class ChunkBehaviourNoiseGraphDictionary : SerializableDictionary<ChunkUpdator, NoiseGraph> {}
+
 public abstract class SerializableDictionaryBase<TKey, TValue, TValueStorage> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
 	[SerializeField]

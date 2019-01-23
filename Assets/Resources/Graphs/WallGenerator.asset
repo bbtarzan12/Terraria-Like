@@ -1,0 +1,633 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56445bd15c78b29419150c777a681534, type: 3}
+  m_Name: WallGenerator
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 114026322884899276}
+  - {fileID: 114771611220644938}
+  - {fileID: 114265123078719050}
+  - {fileID: 114403940183981828}
+  - {fileID: 114178364645861522}
+  - {fileID: 114239922124170498}
+  - {fileID: 114969625359901546}
+  - {fileID: 114705639228336340}
+  - {fileID: 114069962134486706}
+  - {fileID: 114086734412387256}
+  - {fileID: 114664301643968420}
+  - {fileID: 114744799916035344}
+  - {fileID: 114006036704137752}
+  - {fileID: 114157444635886988}
+  mapSize: {x: 1024, y: 512}
+--- !u!114 &114006036704137752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2cdf1015514640b671bc8392bd25fb, type: 3}
+  m_Name: Mix Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 280, y: -120}
+  ports:
+    m_keys:
+    - input1
+    - input2
+    - output
+    m_values:
+    - _fieldName: input1
+      _node: {fileID: 114006036704137752}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114069962134486706}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input2
+      _node: {fileID: 114006036704137752}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114744799916035344}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114006036704137752}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input2
+        node: {fileID: 114157444635886988}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input1: {fileID: 0}
+  input2: {fileID: 0}
+  output: {fileID: 0}
+  mixType: 2
+--- !u!114 &114026322884899276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252a4de4422e2a8418d17902582dad4d, type: 3}
+  m_Name: Terrain Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -952, y: 408}
+  ports:
+    m_keys:
+    - output
+    m_values:
+    - _fieldName: output
+      _node: {fileID: 114026322884899276}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input1
+        node: {fileID: 114239922124170498}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  x: 999
+  height: 0.73
+  scale: 15
+  fractal: 4
+  smooth: 0.1
+--- !u!114 &114069962134486706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2cdf1015514640b671bc8392bd25fb, type: 3}
+  m_Name: Mix Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -200, y: -184}
+  ports:
+    m_keys:
+    - input1
+    - input2
+    - output
+    m_values:
+    - _fieldName: input1
+      _node: {fileID: 114069962134486706}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114705639228336340}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input2
+      _node: {fileID: 114069962134486706}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114664301643968420}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114069962134486706}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input1
+        node: {fileID: 114006036704137752}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input1: {fileID: 0}
+  input2: {fileID: 0}
+  output: {fileID: 0}
+  mixType: 2
+--- !u!114 &114086734412387256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bd05cf3dd48af8574c2abe8351e94, type: 3}
+  m_Name: Simplex Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -920, y: 56}
+  ports:
+    m_keys:
+    - output
+    m_values:
+    - _fieldName: output
+      _node: {fileID: 114086734412387256}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114664301643968420}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  offset: {x: 15, y: 789}
+  scale: 10
+  fractal: 2
+--- !u!114 &114157444635886988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2cdf1015514640b671bc8392bd25fb, type: 3}
+  m_Name: Mix Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 712, y: 56}
+  ports:
+    m_keys:
+    - input1
+    - input2
+    - output
+    m_values:
+    - _fieldName: input1
+      _node: {fileID: 114157444635886988}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114969625359901546}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input2
+      _node: {fileID: 114157444635886988}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114006036704137752}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114157444635886988}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114771611220644938}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input1: {fileID: 0}
+  input2: {fileID: 0}
+  output: {fileID: 0}
+  mixType: 4
+--- !u!114 &114178364645861522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ac05d272293274793806bfe1b133d4, type: 3}
+  m_Name: Step Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -600, y: 856}
+  ports:
+    m_keys:
+    - input
+    - output
+    m_values:
+    - _fieldName: input
+      _node: {fileID: 114178364645861522}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114403940183981828}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114178364645861522}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input2
+        node: {fileID: 114239922124170498}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  threshold: 0.251
+--- !u!114 &114239922124170498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2cdf1015514640b671bc8392bd25fb, type: 3}
+  m_Name: Mix Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -200, y: 376}
+  ports:
+    m_keys:
+    - input1
+    - input2
+    - output
+    m_values:
+    - _fieldName: input1
+      _node: {fileID: 114239922124170498}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114026322884899276}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input2
+      _node: {fileID: 114239922124170498}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114178364645861522}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114239922124170498}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input1
+        node: {fileID: 114969625359901546}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input1: {fileID: 0}
+  input2: {fileID: 0}
+  output: {fileID: 0}
+  mixType: 2
+--- !u!114 &114265123078719050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f4df123a5142d788004d5481d6cd53, type: 3}
+  m_Name: Ore Color Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -184, y: 696}
+  ports:
+    m_keys:
+    - output
+    m_values:
+    - _fieldName: output
+      _node: {fileID: 114265123078719050}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input2
+        node: {fileID: 114969625359901546}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  color: {r: 0.1764706, g: 0.13725491, b: 0.09803922, a: 1}
+  oreIndex: 9
+--- !u!114 &114403940183981828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bd05cf3dd48af8574c2abe8351e94, type: 3}
+  m_Name: Simplex Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -936, y: 856}
+  ports:
+    m_keys:
+    - output
+    m_values:
+    - _fieldName: output
+      _node: {fileID: 114403940183981828}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114178364645861522}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  offset: {x: 453, y: 789}
+  scale: 10
+  fractal: 2
+--- !u!114 &114664301643968420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ac05d272293274793806bfe1b133d4, type: 3}
+  m_Name: Step Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -584, y: 56}
+  ports:
+    m_keys:
+    - input
+    - output
+    m_values:
+    - _fieldName: input
+      _node: {fileID: 114664301643968420}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114086734412387256}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114664301643968420}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input2
+        node: {fileID: 114069962134486706}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  threshold: 0.66
+--- !u!114 &114705639228336340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252a4de4422e2a8418d17902582dad4d, type: 3}
+  m_Name: Terrain Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -936, y: -328}
+  ports:
+    m_keys:
+    - output
+    m_values:
+    - _fieldName: output
+      _node: {fileID: 114705639228336340}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input1
+        node: {fileID: 114069962134486706}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  x: 999
+  height: 0.73
+  scale: 15
+  fractal: 4
+  smooth: 0.1
+--- !u!114 &114744799916035344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f4df123a5142d788004d5481d6cd53, type: 3}
+  m_Name: Ore Color Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -104, y: 88}
+  ports:
+    m_keys:
+    - output
+    m_values:
+    - _fieldName: output
+      _node: {fileID: 114744799916035344}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input2
+        node: {fileID: 114006036704137752}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  color: {r: 0.13725491, g: 0.13725491, b: 0.13725491, a: 1}
+  oreIndex: 10
+--- !u!114 &114771611220644938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc5ce0d10a54463b6f8b663a1c02e0a, type: 3}
+  m_Name: Out Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1144, y: 376}
+  ports:
+    m_keys:
+    - input
+    m_values:
+    - _fieldName: input
+      _node: {fileID: 114771611220644938}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114157444635886988}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+  input: {fileID: 0}
+--- !u!114 &114969625359901546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2cdf1015514640b671bc8392bd25fb, type: 3}
+  m_Name: Mix Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 232, y: 392}
+  ports:
+    m_keys:
+    - input1
+    - input2
+    - output
+    m_values:
+    - _fieldName: input1
+      _node: {fileID: 114969625359901546}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114239922124170498}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input2
+      _node: {fileID: 114969625359901546}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114265123078719050}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114969625359901546}
+      _typeQualifiedName: XNode.Noise.NoiseNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input1
+        node: {fileID: 114157444635886988}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  input1: {fileID: 0}
+  input2: {fileID: 0}
+  output: {fileID: 0}
+  mixType: 2

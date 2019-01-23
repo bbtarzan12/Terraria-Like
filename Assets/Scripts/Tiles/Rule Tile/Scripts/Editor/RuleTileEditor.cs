@@ -28,6 +28,10 @@ namespace UnityEditor
         private const string s_Rotated = "iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwQAADsEBuJFr7QAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC41ZYUyZQAAAHdJREFUOE+djssNwCAMQxmIFdgx+2S4Vj4YxWlQgcOT8nuG5u5C732Sd3lfLlmPMR4QhXgrTQaimUlA3EtD+CJlBuQ7aUAUMjEAv9gWCQNEPhHJUkYfZ1kEpcxDzioRzGIlr0Qwi0r+Q5rTgM+AAVcygHgt7+HtBZs/2QVWP8ahAAAAAElFTkSuQmCC";
 
         private static Texture2D[] s_Arrows;
+
+        SerializedProperty color;
+        SerializedProperty tileType;
+        
         public static Texture2D[] arrows
         {
             get
@@ -84,6 +88,9 @@ namespace UnityEditor
             m_ReorderableList.elementHeightCallback = GetElementHeight;
             m_ReorderableList.onReorderCallback = ListUpdated;
             m_ReorderableList.onAddCallback = OnAddElement;
+
+            color = serializedObject.FindProperty(nameof(tile.color));
+            tileType = serializedObject.FindProperty(nameof(tile.tileType));
         }
 
         private void ListUpdated(ReorderableList list)
@@ -152,10 +159,11 @@ namespace UnityEditor
             tile.m_DefaultSprite = EditorGUILayout.ObjectField("Default Sprite", tile.m_DefaultSprite, typeof(Sprite), false) as Sprite;
             tile.m_DefaultGameObject = EditorGUILayout.ObjectField("Default Game Object", tile.m_DefaultGameObject, typeof(GameObject), false) as GameObject;
             tile.m_DefaultColliderType = (Tile.ColliderType)EditorGUILayout.EnumPopup("Default Collider", tile.m_DefaultColliderType);
-            tile.color = EditorGUILayout.ColorField("Color", tile.color);
             
             serializedObject.Update();
             EditorGUI.BeginChangeCheck();
+            EditorGUILayout.PropertyField(color);
+            EditorGUILayout.PropertyField(tileType);
             var baseFields = typeof(RuleTile).GetFields().Select(field => field.Name);
             var fields = target.GetType().GetFields().Select(field => field.Name).Where(field => !baseFields.Contains(field));
             foreach (var field in fields)
@@ -165,14 +173,16 @@ namespace UnityEditor
 
             EditorGUILayout.Space();
 
-            if (GUILayout.Button("Export Tiles"))
+            if (GUILayout.Button($"Export {tile.tileType}"))
             {
-                string path = Application.dataPath + "/Tiles/export.txt";
+                string path = Application.dataPath + $"/Tiles/{tile.tileType}_export.txt";
 
                 StreamWriter writer = new StreamWriter(path, false);
                 
                 foreach (var rule in tile.m_TilingRules)
                 {
+                    writer.WriteLine(rule.m_Output);
+                    
                     foreach (var sprite in rule.m_Sprites)
                     {
                         writer.WriteLine(sprite.name.Replace($"{target.name}_", ""));
@@ -187,28 +197,42 @@ namespace UnityEditor
                 writer.Close();
             }
 
-            if (GUILayout.Button("Import Tiles"))
+            if (GUILayout.Button($"Import {tile.tileType}"))
             {
-                TextAsset data = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tiles/export.txt");
-                Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath($"Assets/Sprites/Ores/{target.name}.png").OfType<Sprite>().ToArray();
+                TextAsset data = AssetDatabase.LoadAssetAtPath<TextAsset>($"Assets/Tiles/{tile.tileType}_export.txt");
+                Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath($"Assets/Sprites/{tile.tileType}/{target.name}.png").OfType<Sprite>().ToArray();
                 
                 if(sprites.Length == 0)
-                    Debug.LogError($"Fail to Load Assets/Sprites/Ores/{target.name}.png");
+                    Debug.LogError($"Fail to Load Assets/Sprites/{tile.tileType}/{target.name}.png");
                 
                 List<string> text = new List<string>(data.text.Split('\n'));
                 int index = 0;
                 bool isDirt = target.name == "Dirt";
                 List<RuleTile.TilingRule> rules = new List<RuleTile.TilingRule>();
-                for (int i = 0; i < 61; i++)
+
+                while (text.Count - 1 > index)
                 {
                     var rule = new RuleTile.TilingRule();
-                    rule.m_Sprites = new Sprite[3];
                     rule.m_Neighbors = new int[8];
-                    rule.m_Output = RuleTile.TilingRule.OutputSprite.Random;
+                    rule.m_Output = (RuleTile.TilingRule.OutputSprite)Enum.Parse(typeof(RuleTile.TilingRule.OutputSprite), text[index++]);
 
-                    for (int j = 0; j < 3; j++)
+                    switch (rule.m_Output)
                     {
-                        rule.m_Sprites[j] = sprites[int.Parse(text[index++])];
+                        case RuleTile.TilingRule.OutputSprite.Random:
+                        {
+                            rule.m_Sprites = new Sprite[3];
+                            for (int j = 0; j < 3; j++)
+                            {
+                                rule.m_Sprites[j] = sprites[int.Parse(text[index++])];
+                            }
+                            break;
+                        }
+                        default:
+                        {
+                            rule.m_Sprites = new Sprite[1];
+                            rule.m_Sprites[0] = sprites[int.Parse(text[index++])];
+                            break;
+                        }
                     }
 
                     for (int j = 0; j < 8; j++)

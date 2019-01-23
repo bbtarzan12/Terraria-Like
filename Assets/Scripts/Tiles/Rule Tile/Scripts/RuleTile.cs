@@ -41,9 +41,12 @@ namespace UnityEngine
             set { m_OverrideSelf = value; }
         }
 
+        public TileType tileType;
         protected TileBase[] m_CachedNeighboringTiles = new TileBase[NeighborCount];
         private TileBase m_OverrideSelf;
         private Quaternion m_GameObjectQuaternion;
+        
+        public enum TileType { Ore, Wall }
 
         [Serializable]
         public class TilingRule
@@ -89,11 +92,10 @@ namespace UnityEngine
 
         public override bool StartUp(Vector3Int location, ITilemap tilemap, GameObject instantiateedGameObject)
         {
-            if (instantiateedGameObject != null)
-            {
-                instantiateedGameObject.transform.position = location + tilemap.GetComponent<Tilemap>().tileAnchor;
-                instantiateedGameObject.transform.rotation = m_GameObjectQuaternion;
-            }
+            if (instantiateedGameObject == null) return true;
+            
+            instantiateedGameObject.transform.position = location + tilemap.GetComponent<Tilemap>().tileAnchor;
+            instantiateedGameObject.transform.rotation = m_GameObjectQuaternion;
 
             return true;
         }
